@@ -1,0 +1,97 @@
+﻿<html>
+	
+<head>
+	<title>Oracle - ORA-01543: tablespace 'JUNIT_IWFVM00609_USER' already exists</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "QuickHelp.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("OracleORA01543tablespaceJUNIT_IW");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Oracle - ORA-01543: tablespace 'JUNIT_IWFVM00609_USER' already exists</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Database.html">Database</a> &rsaquo;&rsaquo; <a href="Oracle.html">Oracle</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Oracle.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="OracleORA01940cannotdropausertha.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="PostgreSQL.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps6"><span class="rvts33">java.sql.SQLException: ORA-01543: tablespace 'JUNIT_IWFVM00609_USER' already exists</span></p>
+<p class="rvps6"><span class="rvts33"><br/></span></p>
+<p class="rvps11"><span class="rvts34">SQL:CREATE TABLESPACE JUNIT_IWFVM00609_USER LOGGING DATAFILE 'JUNIT_IWFVM00609_USER_DATA' SIZE 50M REUSE AUTOEXTEND ON NEXT 10M MAXSIZE UNLIMITED DEFAULT STORAGE ( INITIAL 5M NEXT 5M MINEXTENTS 1 MAXEXTENTS UNLIMITED PCTINCREASE 50 )</span></p>
+<p class="rvps11"><span class="rvts34">[installer] &nbsp; &nbsp; &nbsp;[java] Error: code=1543, state=72000, message=ORA-01543: tablespace 'JUNIT_IWFVM00609_USER' already exists</span></p>
+<p class="rvps11"><span class="rvts34">[installer] &nbsp; &nbsp; &nbsp;[java] , sql=CREATE TABLESPACE JUNIT_IWFVM00609_USER LOGGING DATAFILE 'JUNIT_IWFVM00609_USER_DATA' SIZE 50M REUSE AUTOEXTEND ON NEXT 10M MAXSIZE UNLIMITED DEFAULT STORAGE ( INITIAL 5M NEXT 5M MINEXTENTS 1 MAXEXTENTS UNLIMITED PCTINCREASE 50 )</span></p>
+<p class="rvps6"><span class="rvts33"><br/></span></p>
+<p class="rvps6"><a class="rvts35" href="http://www.idevelopment.info/data/Oracle/DBA_tips/Database_Administration/DBA_16.shtml">http://www.idevelopment.info/data/Oracle/DBA_tips/Database_Administration/DBA_16.shtml</a><span class="rvts33"> </span></p>
+<p class="rvps6"><span class="rvts33"><br/></span></p>
+<p class="rvps6"><span class="rvts33">SELECT TABLESPACE_NAME, FILE_NAME, FILE_ID</span></p>
+<p class="rvps6"><span class="rvts33">FROM DBA_DATA_FILES</span></p>
+<p class="rvps6"><span class="rvts33">WHERE TABLESPACE_NAME = 'JUNIT_IWFVM00609_USER';</span></p>
+<p class="rvps6"><span class="rvts33"><br/></span></p>
+<p class="rvps6"><span class="rvts33">DROP TABLESPACE JUNIT_IWFVM00609_USER INCLUDING CONTENTS AND DATAFILES;</span></p>
+<p class="rvps6"><span class="rvts16"><br/></span></p>
+<p></p>
+<p class="rvps4"><span class="rvts11">Created with the Personal Edition of HelpNDoc: </span><a class="rvts12" href="http://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Produce online help for Qt applications</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2016 by Linh Hong. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

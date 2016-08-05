@@ -1,0 +1,100 @@
+﻿<html>
+	
+<head>
+	<title>Set static IP address on Redhat linux</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "QuickHelp.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("SetstaticIPaddressonRedhatlinux");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Set static IP address on Redhat linux</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="LinuxunixOS.html">Linux/unix OS</a> &rsaquo;&rsaquo; <a href="Network.html">Network</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Network.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="FindOutWhichProcessIsListeningUp.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Sizeoffolderfile.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps6"><span class="rvts16">How to set static IP address on Redhat linux</span></p>
+<p class="rvps6"><span class="rvts16"><br/></span></p>
+<p class="rvps6"><span class="rvts16">(</span><a class="rvts20" href="http://techteam.wordpress.com/2007/02/08/how-to-set-static-ip-address-on-red-hat/">http://techteam.wordpress.com/2007/02/08/how-to-set-static-ip-address-on-red-hat/</a><span class="rvts16"> )</span></p>
+<p class="rvps9"><span class="rvts26">Go to the /etc/sysconfig/network-scripts and open the ifcfg-eth0 file for editing</span></p>
+<p class="rvps9"><span class="rvts26">change</span></p>
+<p class="rvps9"><span class="rvts26">BOOTPROTO=DYNAMIC</span></p>
+<p class="rvps9"><span class="rvts26">to</span></p>
+<p class="rvps9"><span class="rvts26">BOOTPROTO=STATIC</span></p>
+<p class="rvps9"><span class="rvts26">add a new line</span></p>
+<p class="rvps9"><span class="rvts26">IPADDR=(type ip address here)</span></p>
+<p class="rvps9"><span class="rvts26">Save and Close ifcfg-eth0.</span></p>
+<p class="rvps9"><span class="rvts26">To flush IP address use the following command</span></p>
+<p class="rvps9"><span class="rvts26">/etc/init.d/network stop</span></p>
+<p class="rvps9"><span class="rvts26">then</span></p>
+<p class="rvps9"><span class="rvts26">/etc/init.d/network start</span></p>
+<p class="rvps9"><span class="rvts26">To check that the IP address has taken type</span></p>
+<p class="rvps2"><span class="rvts27">/sbin/ifconfig</span></p>
+<p></p>
+<p class="rvps4"><span class="rvts11">Created with the Personal Edition of HelpNDoc: </span><a class="rvts12" href="http://www.helpndoc.com/help-authoring-tool">Free help authoring tool</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2016 by Linh Hong. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

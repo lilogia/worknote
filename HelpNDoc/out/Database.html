@@ -1,0 +1,929 @@
+﻿<html>
+	
+<head>
+	<title>Database</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "QuickHelp.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Database");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Database</h1>
+				
+				</div>
+			<div id="topic_header_nav">
+				<a href="sudo.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Oracle.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps2"><span class="rvts6">SQL reference:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">http://www.w3schools.com/sql/sql_quickref.asp </span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<div class="rvps10"><table border="1" cellpadding="0" cellspacing="-2" style="border-width: 0px; border-collapse: collapse;">
+<tr valign="top">
+<td width="154" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts28">SQL Statement</span></p>
+</td>
+<td width="407" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts28">Syntax</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">AND / OR</span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT column_name(s)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="55" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">FROM table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="55" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">WHERE condition</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="73" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="73" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">AND|OR condition</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="73" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">ALTER TABLE</span></p>
+</td>
+<td width="407" height="73" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">ALTER TABLE table_name&nbsp;</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">ADD column_name datatype</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts30"><br/></span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">or</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts30"><br/></span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="73" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="73" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">ALTER TABLE table_name&nbsp;</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">DROP COLUMN column_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="129" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">AS (alias)</span></p>
+</td>
+<td width="407" height="129" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT column_name AS column_alias</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="55" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">FROM table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts30"><br/></span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">or</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts30"><br/></span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="73" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="73" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT column_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="110" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="110" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">FROM table_name&nbsp; AS table_alias</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">BETWEEN</span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT column_name(s)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="55" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">FROM table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="55" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">WHERE column_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">BETWEEN value1 AND value2</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="129" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">CREATE DATABASE</span></p>
+</td>
+<td width="407" height="129" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">CREATE DATABASE database_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">CREATE TABLE</span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">CREATE TABLE table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">(</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">column_name1 data_type,</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">column_name2 data_type,</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">column_name3 data_type,</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">...</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">CREATE INDEX</span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">CREATE INDEX index_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="110" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="110" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">ON table_name (column_name)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts30"><br/></span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">or</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts30"><br/></span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="129" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="129" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">CREATE UNIQUE INDEX index_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="110" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="110" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">ON table_name (column_name)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">CREATE VIEW</span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">CREATE VIEW view_name AS</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT column_name(s)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="55" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">FROM table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="55" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">WHERE condition</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="73" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">DELETE</span></p>
+</td>
+<td width="407" height="73" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">DELETE FROM table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">WHERE some_column=some_value</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts30"><br/></span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">or</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts30"><br/></span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="73" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="73" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">DELETE FROM table_name&nbsp;</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">(</span><span class="rvts28">Note:&nbsp;</span><span class="rvts29">Deletes the entire table!!)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts30"><br/></span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">DELETE * FROM table_name&nbsp;</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">(</span><span class="rvts28">Note:&nbsp;</span><span class="rvts29">Deletes the entire table!!)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="110" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">DROP DATABASE</span></p>
+</td>
+<td width="407" height="110" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">DROP DATABASE database_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="165" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">DROP INDEX</span></p>
+</td>
+<td width="407" height="165" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">DROP INDEX table_name.index_name (SQL Server)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="184" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="184" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">DROP INDEX index_name ON table_name (MS Access)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="110" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="110" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">DROP INDEX index_name (DB2/Oracle)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="73" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="73" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">ALTER TABLE table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="110" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="110" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">DROP INDEX index_name (MySQL)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="73" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">DROP TABLE</span></p>
+</td>
+<td width="407" height="73" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">DROP TABLE table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="165" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">EXISTS</span></p>
+</td>
+<td width="407" height="165" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">IF EXISTS (SELECT * FROM table_name WHERE id = ?)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">BEGIN</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="110" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="110" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">--do what needs to be done if exists</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">END</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">ELSE</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">BEGIN</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="110" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="110" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">--do what needs to be done if not</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">END</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="202" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">GROUP BY</span></p>
+</td>
+<td width="407" height="202" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT column_name, aggregate_function(column_name)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="55" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">FROM table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="110" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="110" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">WHERE column_name operator value</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="73" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="73" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">GROUP BY column_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="202" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">HAVING</span></p>
+</td>
+<td width="407" height="202" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT column_name, aggregate_function(column_name)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="55" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">FROM table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="110" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="110" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">WHERE column_name operator value</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="73" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="73" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">GROUP BY column_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="202" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="202" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">HAVING aggregate_function(column_name) operator value</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">IN</span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT column_name(s)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="55" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">FROM table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="55" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">WHERE column_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="73" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="73" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">IN (value1,value2,..)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="73" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">INSERT INTO</span></p>
+</td>
+<td width="407" height="73" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">INSERT INTO table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="129" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="129" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">VALUES (value1, value2, value3,....)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts30"><br/></span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts31">or</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts30"><br/></span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="73" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="73" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">INSERT INTO table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="110" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="110" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">(column1, column2, column3,...)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="129" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="129" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">VALUES (value1, value2, value3,....)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">INNER JOIN</span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT column_name(s)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="55" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">FROM table_name1</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="73" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="73" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">INNER JOIN table_name2&nbsp;</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="184" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="184" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">ON table_name1.column_name=table_name2.column_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">LEFT JOIN</span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT column_name(s)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="55" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">FROM table_name1</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="73" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="73" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">LEFT JOIN table_name2&nbsp;</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="184" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="184" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">ON table_name1.column_name=table_name2.column_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">RIGHT JOIN</span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT column_name(s)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="55" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">FROM table_name1</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="73" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="73" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">RIGHT JOIN table_name2&nbsp;</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="184" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="184" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">ON table_name1.column_name=table_name2.column_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">FULL JOIN</span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT column_name(s)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="55" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">FROM table_name1</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="73" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="73" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">FULL JOIN table_name2&nbsp;</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="184" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="184" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">ON table_name1.column_name=table_name2.column_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">LIKE</span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT column_name(s)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="55" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">FROM table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">WHERE column_name LIKE pattern</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">ORDER BY</span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT column_name(s)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="55" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">FROM table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="110" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="110" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">ORDER BY column_name [ASC|DESC]</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT</span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT column_name(s)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="55" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">FROM table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="37" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT *</span></p>
+</td>
+<td width="407" height="37" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT *</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="55" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">FROM table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="129" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT DISTINCT</span></p>
+</td>
+<td width="407" height="129" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT DISTINCT column_name(s)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="55" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">FROM table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="37" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT INTO</span></p>
+</td>
+<td width="407" height="37" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT *</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="147" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="147" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">INTO new_table_name [IN externaldatabase]</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="73" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="73" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">FROM old_table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts30"><br/></span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts31">or</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts30"><br/></span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT column_name(s)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="147" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="147" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">INTO new_table_name [IN externaldatabase]</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="73" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="73" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">FROM old_table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="147" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT TOP</span></p>
+</td>
+<td width="407" height="147" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT TOP number|percent column_name(s)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="55" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">FROM table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">TRUNCATE TABLE</span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">TRUNCATE TABLE table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="147" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">UNION</span></p>
+</td>
+<td width="407" height="147" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT column_name(s) FROM table_name1</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="19" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="19" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">UNION</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="147" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="147" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT column_name(s) FROM table_name2</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="147" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">UNION ALL</span></p>
+</td>
+<td width="407" height="147" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT column_name(s) FROM table_name1</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="37" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="37" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">UNION ALL</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="147" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="147" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT column_name(s) FROM table_name2</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="73" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">UPDATE</span></p>
+</td>
+<td width="407" height="73" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">UPDATE table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="129" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="129" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SET column1=value, column2=value,...</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">WHERE some_column=some_value</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="92" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">WHERE</span></p>
+</td>
+<td width="407" height="92" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">SELECT column_name(s)</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="55" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; border-bottom: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="55" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-bottom: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">FROM table_name</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="154" height="111" valign="top" style="border-width : 2px; border-color: #c0c0c0; border-style: solid; padding: 0px; border-top: none; border-right: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29"><br/></span></p>
+</td>
+<td width="407" height="111" valign="top" style="border-width : 2px; border-color: #000000; border-style: solid; padding: 0px; border-top: none; border-left: none; background-color: #ffffff;"><p class="rvps2"><span class="rvts29">WHERE column_name operator value</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts29"><br/></span></p>
+<p></p>
+<p class="rvps4"><span class="rvts11">Created with the Personal Edition of HelpNDoc: </span><a class="rvts12" href="http://www.helpndoc.com/feature-tour/create-ebooks-for-amazon-kindle">Generate Kindle eBooks with ease</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2016 by Linh Hong. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

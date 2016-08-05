@@ -1,0 +1,121 @@
+﻿<html>
+	
+<head>
+	<title>vagrant</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "QuickHelp.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("vagrant");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">vagrant</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="OVA.html">OVA</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="OVA.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="OVA.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="vboxmanage.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps2"><span class="rvts6">https://www.vagrantup.com/docs/getting-started/</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">1. Export a VM of VirtualBox to a box</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; vagrant package --base hpe-wheezy64-oracle-3 --output hpe-jessie64-oracle.box</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; vagrant package --base hpe-jessie64 --output hpe-jessie64.box</span></p>
+<p class="rvps2"><span class="rvts6">2. Import a box into vagrant </span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; vagrant box add hpe-jessie64-1 ${location_of_box_file}</span></p>
+<p class="rvps2"><span class="rvts6">vagrant box add hpe-jessie64-1 1\hpe-jessie64.box</span></p>
+<p class="rvps2"><span class="rvts6"></span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps2"><span class="rvts6">3. Remove a box from vagrant</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; vagrant &nbsp;box remove hpe-jessie64-1</span></p>
+<p class="rvps2"><span class="rvts6">4. Try to start up a box </span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; - move to hp-em</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; - Run command: vagrant up</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">vagrant halt</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">vagrant destroy</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts76">vagrant box add hpe-jessie64-1 C:\_ova\bk-me\hpe-jessie64-1.box</span></p>
+<p class="rvps2"><span class="rvts76"><br/></span></p>
+<p class="rvps2"><span class="rvts76">vagrant box remove hpe-jessie64-1</span></p>
+<p class="rvps2"><span class="rvts76"><br/></span></p>
+<p class="rvps2"><span class="rvts76">vagrant box list</span></p>
+<p class="rvps2"><span class="rvts76"><br/></span></p>
+<p class="rvps2"><span class="rvts76">vagrant package --base hpe-jessie64-1 --output C:\_ova\bk-me\hpe-jessie64-1.box</span></p>
+<p class="rvps2"><span class="rvts76"><br/></span></p>
+<p class="rvps2"><span class="rvts76">vagrant package --base hpe-jessie64-1 --output C:\_ova\bk\hpe-jessie64-2-1.box</span></p>
+<p class="rvps2"><span class="rvts76"><br/></span></p>
+<p class="rvps2"><span class="rvts76"><br/></span></p>
+<p class="rvps2"><span class="rvts76"><br/></span></p>
+<p class="rvps2"><span class="rvts76"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4"><span class="rvts11">Created with the Personal Edition of HelpNDoc: </span><a class="rvts12" href="http://www.helpndoc.com">Easy EBook and documentation generator</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2016 by Linh Hong. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

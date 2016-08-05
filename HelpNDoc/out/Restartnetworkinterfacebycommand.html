@@ -1,0 +1,112 @@
+﻿<html>
+	
+<head>
+	<title>Restart network interface by command lines</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "QuickHelp.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Restartnetworkinterfacebycommand");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Restart network interface by command lines</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="LinuxunixOS.html">Linux/unix OS</a> &rsaquo;&rsaquo; <a href="Network.html">Network</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Network.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="Network.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="PermanenthostnamechangeonRedHatb.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps6"><span class="rvts16">Restart network interface by command lines</span></p>
+<p class="rvps6"><span class="rvts16"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li style="margin-left: 0px" class="rvps8"><span class="rvts16">Stop the network interface eth0:</span></li>
+</ul>
+<p class="rvps6"><span class="rvts16">ifdown eth0 </span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li style="margin-left: 0px" class="rvps8"><span class="rvts16">Start the network interface eth0:</span></li>
+</ul>
+<p class="rvps6"><span class="rvts16">ifup eth0 </span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li style="margin-left: 0px" class="rvps8"><span class="rvts16">Check the network</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6">ifconfig</span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li style="margin-left: 0px" class="rvps8"><span class="rvts16">To see your various network interfaces, use the command:</span></li>
+</ul>
+<p class="rvps6"><span class="rvts16">/sbin/ifconfig –a</span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li style="margin-left: 0px" class="rvps8"><span class="rvts16">Set auto start the network interface after boot (</span><a class="rvts20" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/s1-networkscripts-interfaces.html">https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/s1-networkscripts-interfaces.html</a><span class="rvts16">) </span></li>
+</ul>
+<p class="rvps2"><span class="rvts6">Edit /etc/sysconfig/network-scripts/ifcfg-eth0</span></p>
+<p class="rvps6"><span class="rvts16">The following is a sample ifcfg-eth0 file for a system using a fixed IP address:</span></p>
+<p class="rvps6"><span class="rvts16">DEVICE=eth0</span></p>
+<p class="rvps6"><span class="rvts16">BOOTPROTO=none</span></p>
+<p class="rvps6"><span class="rvts16">ONBOOT=yes</span></p>
+<p class="rvps6"><span class="rvts16">NETMASK=255.255.255.0</span></p>
+<p class="rvps6"><span class="rvts16">IPADDR=10.0.1.27</span></p>
+<p class="rvps2"><span class="rvts6">USERCTL=no</span></p>
+<p></p>
+<p class="rvps4"><span class="rvts11">Created with the Personal Edition of HelpNDoc: </span><a class="rvts12" href="http://www.helpndoc.com/feature-tour">Easily create Web Help sites</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2016 by Linh Hong. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

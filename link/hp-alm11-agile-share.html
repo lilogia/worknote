@@ -1,0 +1,174 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> Agile & ALM 11 </TITLE>
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<META NAME="Generator" CONTENT="Publisher">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+
+<style type="text/css">
+.large {
+	font-size: 20px; 
+	font-weight: bold;
+}
+
+.medium {
+	font-size: 14px; 
+	font-weight: bold;
+}
+
+.tip {
+    font-size: 9px; 
+}
+</style>
+</HEAD>
+
+<BODY>
+<div class="large">Tools</div>
+<div class="medium">ALM altlanta</div>
+<a href="http://g5w2562g.atlanta.hp.com:8080/qcbin/start_a.jsp" target="_blank">[Only for IE] ALM Client > Change Requests - Quick location (see Training & Support)</a><br>
+--- Favourite > Publich > Systinet > titan-4.10_New-Open
+<a href="http://qc2d.atlanta.hp.com/qcbin/start_a.jsp" target="_blank">[Only for IE] ALM Client > Change Requests</a><br>
+<br>
+<div class="medium">rdqctools </div>
+<a href="http://rdqctools.deu.hp.com/" target="_blank">HPSW ALM 11 Services (rdqctools)</a> --> Search ID on top bar of page (ID Search or Fulltext Search)<br>
+<br/>
+<a href="http://rdqctools.deu.hp.com/dt_reports/main.pl?Project=SOA%20Systinet" target="_blank">Report with filter</a><br>
+--- <a href="http://rdqctools.deu.hp.com/dt_reports/report.pl?QUERYTYPE=backlog;submit=Show%20Report;Severity=%28All%29;IssueType=%28All%29;PrePostRelease=%28All%29;Cloning=nf;CustEnc=%28All%29;TestTeam=%28None%29;ProjectReserved=;OtherState=%28All%29;from_day=3;from_month=6;from_year=2014;to_day=23;to_month=9;to_year=2014;Release=orion-5.00;Project=SOA%20Systinet;DisableConfigFilters=0;cacheId=1411448786-9164" target="_blank">List of Defects of Systinet (orion 5.00)</a><br>
+
+<a href="" target="_blank"></a><br>
+<br>
+<div>
+<table>
+<script>
+function getDefect() {
+    var bugtext = document.getElementById('bug');    
+    if (bugtext.value == ''){ 
+        alert('Defect field must not be empty');
+        return false; 
+    } 
+    window.open('http://rdqctools.deu.hp.com/apps/#agileSolution/itemDetails/' + bugtext.value, '_blank', '');
+}
+function insertPrefix(type) {
+// type = QCCR1J - defect
+// type = QCRQ1J - requirement
+	var bugtext = document.getElementById('bug');
+    bugtext.value = type + bugtext.value;
+    getDefect();
+}
+
+</script>
+    <tr><td>View/edit defect: (QCCR1Jxxxxx) <input type="text" id="bug" name="bug" size="20" value="" onkeydown="if (event.keyCode == 13) getDefect()" onfocus="this.value='';">&nbsp;
+    <input value="Show" type="button" onclick="getDefect()">
+	<input value="Insert Defect Prefix & Find" type="button" onclick="insertPrefix('QCCR1J')">
+	<input value="Insert Requirement Prefix & Find" type="button" onclick="insertPrefix('QCRQ1J')"><br/></td></tr>
+</table>
+</div>
+<br/>
+<div class="medium">Quixy</div>
+<a href="http://quixy.deu.hp.com/quixy/php/index.php" target="_blank">QUIXY</a><br>
+<a href="http://quixy.deu.hp.com/quixy/query/qc_submit_cr_rnd.php" target="_blank">Report new defect in quixy</a><br>
+--- <a href="http://quixy.deu.hp.com/quixy/query/qc_submit_cr_rnd.php?PRESET[PROJECT_NAME]=SOA%20Systinet&PRESET[FOUND_IN_RELEASE]=titan-4.10" target="_blank">Add new defect with template (SOA Systinet,titan-4.10)</a><br>
+<div>
+<table>
+<script>
+function getOldDefect() {
+    var bugtext = document.getElementById('oldbug');    
+    if (bugtext.value == ''){ 
+        alert('Old Defect field must not be empty');
+        return false; 
+    } 
+    window.open('http://quixy.deu.hp.com/quixy/query/detail.php?ISSUEID=' + bugtext.value, '_blank', '');
+}
+function insertOldDefectPrefix() {
+    var bugtext = document.getElementById('oldbug');
+    bugtext.value = "SSTNCR" + bugtext.value;
+    getOldDefect();
+}
+</script>
+    <tr><td>View migrated defect by legacy ID: (SSTNCRxxxxx)/ or new ID QCCR1Jxxxxx <input type="text" id="oldbug" name="oldbug" size="20" value="" onkeydown="if (event.keyCode == 13) getOldDefect()" onfocus="this.value='';">&nbsp;
+    <input value="Show" type="button" onclick="getOldDefect()">&nbsp;&nbsp;
+    <input value="Insert Old Prefix & Find" type="button" onclick="insertOldDefectPrefix()"><br/>
+    & then edit in taskboard by link <u>"Update in Taskboard"</u>
+    </td></tr>
+</table>
+</div>
+<a href="http://quixy.deu.hp.com/quixy/query/index_search_fulltext.php" target="_blank">Search ALM DB</a><br>
+<a href="" target="_blank"></a><br>
+<a href="" target="_blank"></a><br>
+<a href="https://quixy.deu.hp.com/quixy/triage/index.php?ACTION=advanced_clone" target="_blank">Triage Board & Patch Manager</a><br>
+<br>
+<div>
+<table>
+<script>
+function getCloneDefect() {
+    var bugtext = document.getElementById('bugclone');    
+    if (bugtext.value == ''){ 
+        alert('Defect field must not be empty');
+        return false; 
+    }     
+    if (bugtext.value.indexOf('QCCR1J') == -1) {
+        bugtext.value = 'QCCR1J' + bugtext.value;
+    }
+    
+    window.open('https://quixy.deu.hp.com/quixy/triage/index.php?ACTION=advanced_clone&ISSUEID=' + bugtext.value, '_blank', '');
+}
+</script>
+    <tr><td>See Clone Family, copy/paste the defect: (QCCR1Jxxxxx) <input type="text" id="bugclone" name="bugclone" size="20" value="" onkeydown="if (event.keyCode == 13) getCloneDefect()">&nbsp;
+    <input value="Show" type="button" onclick="getCloneDefect()"></td></tr>
+</table>
+</div>
+<br/>
+<a href="" target="_blank"></a><br>
+<a href="" target="_blank"></a><br>
+<br>
+<div class="large">Training & Support</div>
+<div class="medium">Quick help</div>
+<a href="http://rndwiki.atlanta.hp.com/confluence/display/QCHP/Defect+Management" target="_blank">Defect Management</a><br>
+<a href="http://rdfileshare.deu.hp.com/training/Defects_Management_In_QC.html" target="_blank">!Training - Workflow - Defect Management!</a><br>
+<a href="https://rndwiki2.atlanta.hp.com/confluence/display/quixy/Change+Request+Workflow" target="_blank">Change+Request+Workflow</a><br>
+<div class="medium">Support & Tips</div>
+<a href="https://rndwiki2.atlanta.hp.com/confluence/display/hpswrdeng/FAQ+ALM+Client" target="_blank">FAQ+ALM+Client (some good tips for ALM client tool)</a><br>
+<a href="https://rndwiki2.atlanta.hp.com/confluence/display/quixy/QualityCenter+FAQ#QualityCenterFAQ-CleaningthelocalALMcache" target="_blank">QualityCenter+FAQ#QualityCenterFAQ</a><br>
+<a href="http://rdqctools.deu.hp.com/ALMSupport.html" target="_blank">HPSW ALM Support</a><br>
+<div class="tip">
+    <ul>
+    <li>
+        <p>What to put in the log message, or how do I commit fix defect #xxxxx now…<br/>
+        Always use <b>Global ID QCCR1J[0-9]+</b> to reference your records<br/>
+        svn ci –m “fixing defect #QCCR1J12345: description (reviewer’s HP email)”
+        </p>
+    </li>
+    <li>
+        <p>IE10 is not officially supported, but several people reported it works, if the compatibility mode is turned on:<br/>
+        http://windows.microsoft.com/en-us/internet-explorer/use-compatibility-view#ie=ie-10<br/>
+        If that doesn’t work, you can still keep IE10 and use the ALM Explorer instead:<br/>
+        http://update.external.hp.com/qualitycenter/qc110/others/almexplorer/ 
+        <br/>
+        I also use it, because it’s basically an IE without addressbar etc. and those are anyhow not helpful in an application like ALM, where the browser back button just takes you out of the application and it makes it obvious in TaskManager etc. which process is ALM.
+        </p>
+    </li>
+    <li>
+        <p>Tip: improve ALM client speed<br/>
+        http://qc2d.atlanta.hp.com/qcbin/  is equal to <br/>
+            - http://g5w2562g.atlanta.hp.com:8080/qcbin/ <br/> 
+            - http://g5w2563g.atlanta.hp.com:8080/qcbin/ <br/>
+            - http://g5w2564g.atlanta.hp.com:8080/qcbin/ <br/>
+            - http://g5w2565g.atlanta.hp.com:8080/qcbin/ <br/>
+            Type: %appdata%, to quickly go to C:\Users\HongGiaLinh\AppData\Roaming, <br/>
+            Then go to C:\Users\HongGiaLinh\AppData\Local\HP\ALM-Client\Deployments.ini, map to folder of qc2d <br/>
+            This tip will stop working when the final fix is implemented. instead, you will have to revert back to qc1d or qc2d or qc3d
+        </p>
+    </li>
+    <ul>
+</div>
+<a href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/Releng/DesignALMTools " target="_blank">DesignALMTools (Twiki)</a><br>
+<a href="http://rdfileshare.deu.hp.com/training/agilevideo/" target="_blank">Basic AgileVideo</a><br>
+<a href="http://rdfileshare.deu.hp.com/training/agileforenterprise/" target="_blank">Enterprise Agile</a><br>
+<a href="http://soadata.emea.hp.com/CST/HP/KUDIBAL,%20IVAN/2013-04-08-from-qc-to-alm/systinet-migration.pptx" target="_blank">systinet-migration.pptx</a><br>
+<a href="" target="_blank"></a><br>
+<br>
+</BODY>
+</HTML>

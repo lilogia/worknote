@@ -1,0 +1,33 @@
+.large {
+	font-size: 20px; 
+	font-weight: bold;
+}
+
+.medium {
+	font-size: 14px; 
+	font-weight: bold;
+}
+
+.small {
+	font-size: 12px; 
+	font-weight: bold;
+}
+
+.tip {
+    font-size: 9px; 
+}
+
+.hide {
+	color: white;
+}
+
+ul {
+    float:left;
+    clear:right;
+    padding:5px;
+
+}
+li {
+    float:left;
+    clear:left;
+}

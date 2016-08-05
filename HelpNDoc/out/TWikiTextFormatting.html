@@ -1,0 +1,792 @@
+﻿<html>
+	
+<head>
+	<title>TWiki Text Formatting</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "QuickHelp.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("TWikiTextFormatting");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">TWiki Text Formatting</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Twiki.html">Twiki</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Twiki.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="Twiki.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="TWikiIconGraphics.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NewItem44.png"></p>
+<h1 class="rvps16"><a name="TWiki_Text_Formatting"></a>
+<span class="rvts0"><span class="rvts42">TWiki Text Formatting</span></span></h1>
+<p class="rvps17"><span class="rvts43">These instructions are for contributors who prefer to use the Raw Edit over the default WYSIWYG editor.</span><span class="rvts44">&nbsp;Working in TWiki is as easy as typing in text. You don't need to know HTML, though you can use it if you prefer. Links to topics are created automatically when you enter&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/WikiWord">WikiWords</a><span class="rvts44">. And TWiki shorthand gives you all the power of HTML with a simple coding system that takes no time to learn. It's all laid out below.</span></p>
+<p class="rvps2"><span class="rvts44">On this page:</span></p>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TextFormattingRules?template=viewplain#TWiki_Editing_Shorthand">TWiki Editing Shorthand</a></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TextFormattingRules?template=viewplain#Using_HTML_CSS_and_JavaScript">Using HTML, CSS and JavaScript</a></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TextFormattingRules?template=viewplain#Hyperlinks">Hyperlinks</a></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li style="margin-left: 0px" class="rvps19"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TextFormattingRules?template=viewplain#Internal_Links">Internal Links</a></li>
+<li style="margin-left: 0px" class="rvps19"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TextFormattingRules?template=viewplain#External_Links">External Links</a></li>
+</ul>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TextFormattingRules?template=viewplain#TWiki_Variables">TWiki Variables</a></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TextFormattingRules?template=viewplain#TWikiPlugin_Formatting_Extension">TWikiPlugin Formatting Extensions</a></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TextFormattingRules?template=viewplain#Common_Editing_Errors">Common Editing Errors</a></li>
+</ul>
+<h2 class="rvps20"><a name="TWiki_Editing_Shorthand"></a>
+<span class="rvts0"><span class="rvts46">TWiki Editing Shorthand</span></span></h2>
+<div class="rvps23"><table border="1" cellpadding="3" cellspacing="2" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
+<tr valign="top">
+<td width="50%" valign="middle" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps3"><span class="rvts47">Formatting Command:</span></p>
+</td>
+<td width="25%" valign="middle" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps3"><span class="rvts47">You write:</span></p>
+</td>
+<td width="25%" valign="middle" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps3"><span class="rvts47">You get:</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="TheParagraphs"></a>
+<span class="rvts47">Paragraphs:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">Blank lines will create new paragraphs.</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49">1st paragraph</span></p>
+<p class="rvps21"><span class="rvts49"><br/></span></p>
+<p class="rvps21"><span class="rvts49">2nd paragraph</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps17"><span class="rvts48">1st paragraph</span></p>
+<p class="rvps17"><span class="rvts48">2nd paragraph</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="TheHeadings"></a>
+<span class="rvts47">Headings:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">Three or more dashes at the beginning of a line, followed by plus signs and the heading text. One plus creates a top level heading, two pluses a second level heading, etc. The maximum heading depth is 6.</span></p>
+<p class="rvps17"><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem18.png"><span class="rvts48">&nbsp;You can create a table of contents with the&nbsp;</span><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/VarTOC">%TOC%</a><span class="rvts48">&nbsp;variable.&nbsp;</span><br/><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem17.png"><span class="rvts48">&nbsp;If you want to&nbsp;</span><span class="rvts47">exclude</span><span class="rvts48">&nbsp;a heading from the TOC, put&nbsp;</span><span class="rvts49">!!</span><span class="rvts48">&nbsp;after the&nbsp;</span><span class="rvts49">---+</span><span class="rvts48">.&nbsp;</span><br/><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem16.png"><span class="rvts48">&nbsp;Empty headings are allowed and won't appear in the table of contents.</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49">---++ Sushi</span></p>
+<p class="rvps21"><span class="rvts49">---+++ Maguro</span></p>
+<p class="rvps21"><span class="rvts49">---+++!! Not in TOC</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><h2 class="rvps20"><span class="rvts0"><span class="rvts51">Sushi</span></span></h2>
+<h3 class="rvps22"><span class="rvts0"><span class="rvts52">Maguro</span></span></h3>
+<h3 class="rvps22"><span class="rvts0"><span class="rvts52">Not in TOC</span></span></h3>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="BoldText"></a>
+<span class="rvts47">Bold Text:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">Words get shown in&nbsp;</span><span class="rvts47">bold</span><span class="rvts48">&nbsp;by enclosing them in&nbsp;</span><span class="rvts49">*</span><span class="rvts48">&nbsp;asterisks.</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49">*Bold*</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps17"><span class="rvts47">Bold</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="ItalicText"></a>
+<span class="rvts47">Italic Text:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">Words get shown in&nbsp;</span><span class="rvts53">italic</span><span class="rvts48">&nbsp;by enclosing them in&nbsp;</span><span class="rvts49">_</span><span class="rvts48">&nbsp;underscores.</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49">_Italic_</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps17"><span class="rvts53">Italic</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="BoldItalic"></a>
+<span class="rvts47">Bold Italic:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">Words get shown in&nbsp;</span><span class="rvts54">bold italic</span><span class="rvts48">&nbsp;by enclosing them in&nbsp;</span><span class="rvts49">__</span><span class="rvts48">&nbsp;double-underscores.</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49">__Bold italic__</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps17"><span class="rvts54">Bold italic</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="FixedFont"></a>
+<span class="rvts47">Fixed Font:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">Words get shown in&nbsp;</span><span class="rvts49">fixed font</span><span class="rvts48">&nbsp;by enclosing them in&nbsp;</span><span class="rvts49">=</span><span class="rvts48">&nbsp;equal signs.</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49">=Fixed font=</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps17"><span class="rvts49">Fixed font</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="BoldFixedFont"></a>
+<span class="rvts47">Bold Fixed Font:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">Words get shown in&nbsp;</span><span class="rvts55">bold fixed font</span><span class="rvts48">&nbsp;by enclosing them in&nbsp;double equal signs.</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49">==Bold fixed==</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps17"><span class="rvts55">Bold fixed</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem21.png"><span class="rvts48">&nbsp;You can follow the closing bold, italic, or other (</span><span class="rvts49">* _ __ = ==</span><span class="rvts48">) indicator with normal punctuation, such as commas and full stops.&nbsp;</span><br/><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem20.png"><span class="rvts48">&nbsp;Make sure there is no space between the text and the indicators.&nbsp;</span><br/><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem19.png"><span class="rvts48">&nbsp;All words enclosed by the indicators need to be on the same line.</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49">_This works_,</span></p>
+<p class="rvps21"><span class="rvts49">_this does not _</span></p>
+<p class="rvps21"><span class="rvts49">_this fails</span></p>
+<p class="rvps21"><span class="rvts49">too_</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps17"><span class="rvts53">This works</span><span class="rvts48">,&nbsp;</span><br/><span class="rvts48">_this does not _&nbsp;</span><br/><span class="rvts48">_this fails too_</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="HorizontalRule"></a>
+<span class="rvts47">Separator (Horizontal Rule):</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">Three or more three dashes at the beginning of a line..</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49">-------</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><img width="627" height="2" alt="" style="padding : 1px;" src="lib/NewItem22.png"></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="BulletedList"></a>
+<span class="rvts47">Bulleted List:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">Multiple of three spaces, an asterisk, and another space.&nbsp;</span><br/><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem23.png"><span class="rvts48">&nbsp;For all the list types, you can break a list item over several lines by indenting lines after the first one by&nbsp;</span><span class="rvts47">at least 3 spaces</span><span class="rvts48">.</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49"> &nbsp; * level 1</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp; &nbsp; &nbsp;* level 2</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp; * back on 1</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp; * A bullet</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp; &nbsp; broken over</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp; &nbsp; three lines</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp; * last bullet</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px" class="rvps18"><span class="rvts48">level 1</span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li style="margin-left: 0px" class="rvps19"><span class="rvts48">level 2</span></li>
+</ul>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts48">back on 1</span></li>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts48">A bullet broken over three lines</span></li>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts48">last bullet</span></li>
+</ul>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="IconList"></a>
+<span class="rvts47">Icon List:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">Multiple of three spaces, an asterisk, text&nbsp;</span><span class="rvts49">icon:name</span><span class="rvts48">&nbsp;and another space.&nbsp;</span><br/><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem24.png"><span class="rvts48">&nbsp;Use the&nbsp;</span><span class="rvts49">name</span><span class="rvts48">&nbsp;of any&nbsp;</span><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TWikiDocGraphics">TWikiDocGraphics</a><span class="rvts48">&nbsp;icon.</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49"> &nbsp; * icon:tip Icon list</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp; &nbsp; &nbsp;* icon:led-red Full</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp; &nbsp; &nbsp;* icon:led-green OK</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp; * icon:unchecked Item 1</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp; * icon:checked Item 2</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp; * icon:empty No bullet</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px" class="rvps18"><span class="rvts48">Icon list</span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li style="margin-left: 0px" class="rvps19"><span class="rvts48">Full</span></li>
+<li style="margin-left: 0px" class="rvps19"><span class="rvts48">OK</span></li>
+</ul>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts48">Item 1</span></li>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts48">Item 2</span></li>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts48">No bullet</span></li>
+</ul>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="NumberedList"></a>
+<span class="rvts47">Numbered List:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">Multiple of three spaces, a type character, a dot, and another space. Several types are available besides a number:</span></p>
+<div class="rvps23"><table border="1" cellpadding="0" cellspacing="0" style="border-color: #000000; border-style: solid; border-spacing: 0px;">
+<tr valign="top">
+<td width="37" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #687684;"><p class="rvps3"><a class="rvts56" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TextFormattingRules?template=viewplain;sortcol=0;table=1;up=0#sorted_table" title="Sort by this column">Type</a></p>
+</td>
+<td width="188" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #687684;"><p class="rvps3"><a class="rvts56" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TextFormattingRules?template=viewplain;sortcol=1;table=1;up=0#sorted_table" title="Sort by this column">Generated Style</a></p>
+</td>
+<td width="121" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #687684;"><p class="rvps3"><a class="rvts56" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TextFormattingRules?template=viewplain;sortcol=2;table=1;up=0#sorted_table" title="Sort by this column">Sample Sequence</a></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="37" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #ffffff;"><p class="rvps2"><span class="rvts48">1.</span></p>
+</td>
+<td width="188" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #ffffff;"><p class="rvps2"><span class="rvts48">Arabic numerals</span></p>
+</td>
+<td width="121" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #ffffff;"><p class="rvps2"><span class="rvts48">1, 2, 3, 4...</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="37" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #edf4f9;"><p class="rvps2"><span class="rvts48">A.</span></p>
+</td>
+<td width="188" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #edf4f9;"><p class="rvps2"><span class="rvts48">Uppercase letters</span></p>
+</td>
+<td width="121" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #edf4f9;"><p class="rvps2"><span class="rvts48">A, B, C, D...</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="37" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #ffffff;"><p class="rvps2"><span class="rvts48">a.</span></p>
+</td>
+<td width="188" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #ffffff;"><p class="rvps2"><span class="rvts48">Lowercase letters</span></p>
+</td>
+<td width="121" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #ffffff;"><p class="rvps2"><span class="rvts48">a, b, c, d...</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="37" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #edf4f9;"><p class="rvps2"><span class="rvts48">I.</span></p>
+</td>
+<td width="188" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #edf4f9;"><p class="rvps2"><span class="rvts48">Uppercase Roman Numerals</span></p>
+</td>
+<td width="121" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #edf4f9;"><p class="rvps2"><span class="rvts48">I, II, III, IV...</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="37" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #ffffff;"><p class="rvps2"><span class="rvts48">i.</span></p>
+</td>
+<td width="188" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #ffffff;"><p class="rvps2"><span class="rvts48">Lowercase Roman Numerals</span></p>
+</td>
+<td width="121" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #ffffff;"><p class="rvps2"><span class="rvts48">i, ii, iii, iv...</span></p>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49"> &nbsp; 1. Sushi</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp; 1. Dim Sum</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp; 1. Fondue</span></p>
+<p class="rvps21"><span class="rvts49"><br/></span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp; A. Sushi</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp; A. Dim Sum</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp; A. Fondue</span></p>
+<p class="rvps21"><span class="rvts49"><br/></span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp; i. Sushi</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp; i. Dim Sum</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp; i. Fondue</span></p>
+<p class="rvps2"><span class="rvts57"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;">
+<li value="1" style="margin-left: 0px" class="rvps18"><span class="rvts48">Sushi</span></li>
+<li value="2" style="margin-left: 0px" class="rvps18"><span class="rvts48">Dim Sum</span></li>
+<li value="3" style="margin-left: 0px" class="rvps18"><span class="rvts48">Fondue</span></li>
+</ol>
+<ol style="text-indent: 0px; margin-left: 0px; list-style-position: inside; list-style-type: decimal;">
+<li value="1" style="text-indent: 0px" class="rvps24"><span class="rvts48">Sushi</span></li>
+<li value="2" style="margin-left: 0px; text-indent: 0px" class="rvps25"><span class="rvts48">Dim Sum</span></li>
+<li value="3" style="margin-left: 0px; text-indent: 0px" class="rvps25"><span class="rvts48">Fondue</span></li>
+</ol>
+<ol style="text-indent: 0px; margin-left: 0px; list-style-position: inside; list-style-type: decimal;">
+<li value="1" style="text-indent: 0px" class="rvps24"><span class="rvts48">Sushi</span></li>
+<li value="2" style="margin-left: 0px; text-indent: 0px" class="rvps25"><span class="rvts48">Dim Sum</span></li>
+<li value="3" style="margin-left: 0px; text-indent: 0px" class="rvps25"><span class="rvts48">Fondue</span></li>
+</ol>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="DefinitionList"></a>
+<span class="rvts47">Definition List:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">Three spaces, a dollar sign, the term, a colon, a space, followed by the definition.</span></p>
+<p class="rvps17"><span class="rvts48">Deprecated syntax: Three spaces, the term with no spaces, a colon, a space, followed by the definition.</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49"> &nbsp; $ Sushi: Japan</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp; $ Dim Sum: S.F.</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><span class="rvts48">Sushi</span></p>
+<p class="rvps26"><span class="rvts48">Japan</span></p>
+<p class="rvps2"><span class="rvts48">Dim Sum</span></p>
+<p class="rvps26"><span class="rvts48">S.F.</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="TheTable"></a>
+<span class="rvts47">Table:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">Each row of the table is a line containing of one or more cells. Each cell starts and ends with a vertical bar '|'. Any spaces at the beginning of a line are ignored.</span></p>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px" class="rvps18"><span class="rvts49">| *bold* |</span><span class="rvts48">&nbsp;header cell with text in asterisks</span></li>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts49">| &nbsp; center-aligned &nbsp; |</span><span class="rvts48">&nbsp;cell with at least two, and equal number of spaces on either side</span></li>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts49">|&nbsp; &nbsp; &nbsp; right-aligned |</span><span class="rvts48">&nbsp;cell with more spaces on the left</span></li>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts49">| 2 colspan ||</span><span class="rvts48">&nbsp;and multi-span columns with multiple&nbsp;</span><span class="rvts49">|</span><span class="rvts48">'s right next to each other</span></li>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts49">|^|</span><span class="rvts48">&nbsp;cell with caret indicating follow-up row of multi-span rows</span></li>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts48">You can split rows over multiple lines by putting a backslash&nbsp;</span><span class="rvts49">'\'</span><span class="rvts48">&nbsp;at the end of each line</span></li>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts48">Contents of table cells wrap automatically as determined by the browser</span></li>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts48">Use&nbsp;</span><span class="rvts49">%VBAR%</span><span class="rvts48">&nbsp;or&nbsp;</span><span class="rvts49">&amp;#124;</span><span class="rvts48">&nbsp;to add&nbsp;</span><span class="rvts49">|</span><span class="rvts48">&nbsp;characters in tables.</span></li>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts48">Use&nbsp;</span><span class="rvts49">%CARET%</span><span class="rvts48">&nbsp;or&nbsp;</span><span class="rvts49">&amp;#94;</span><span class="rvts48">&nbsp;to add&nbsp;</span><span class="rvts49">^</span><span class="rvts48">&nbsp;characters in tables.</span></li>
+</ul>
+<p class="rvps2"><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem25.png"><span class="rvts48">&nbsp;The&nbsp;</span><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TablePlugin">TablePlugin</a><span class="rvts48">&nbsp;provides the&nbsp;</span><span class="rvts49">|^|</span><span class="rvts48">&nbsp;multiple-span row functionality and additional rendering features</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49">| *L* | *C* | *R* |</span></p>
+<p class="rvps21"><span class="rvts49">| A2 | &nbsp;B2 &nbsp;| &nbsp;C2 |</span></p>
+<p class="rvps21"><span class="rvts49">| A3 | &nbsp;B3 &nbsp;| &nbsp;C3 |</span></p>
+<p class="rvps21"><span class="rvts49">| multi span |||</span></p>
+<p class="rvps21"><span class="rvts49">| A5-7 | &nbsp;5 &nbsp;| &nbsp;5 |</span></p>
+<p class="rvps21"><span class="rvts49">|^| six | six |</span></p>
+<p class="rvps21"><span class="rvts49">|^| seven | seven |</span></p>
+<p class="rvps21"><span class="rvts49">| split\</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp;| over\</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp;| 3 lines |</span></p>
+<p class="rvps21"><span class="rvts49">| A9 | &nbsp;B9 &nbsp;| &nbsp;C9 |</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><div class="rvps23"><table border="1" cellpadding="0" cellspacing="0" style="border-color: #000000; border-style: solid; border-spacing: 0px;">
+<tr valign="top">
+<td width="28" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #687684;"><p class="rvps3"><a class="rvts56" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TextFormattingRules?template=viewplain;sortcol=0;table=2;up=0#sorted_table" title="Sort by this column">L</a></p>
+</td>
+<td width="36" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #687684;"><p class="rvps3"><a class="rvts56" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TextFormattingRules?template=viewplain;sortcol=1;table=2;up=0#sorted_table" title="Sort by this column">C</a></p>
+</td>
+<td width="36" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #687684;"><p class="rvps3"><a class="rvts56" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TextFormattingRules?template=viewplain;sortcol=2;table=2;up=0#sorted_table" title="Sort by this column">R</a></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="28" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #ffffff;"><p class="rvps2"><span class="rvts48">A2</span></p>
+</td>
+<td width="36" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #ffffff;"><p class="rvps3"><span class="rvts48">B2</span></p>
+</td>
+<td width="36" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #ffffff;"><p class="rvps27"><span class="rvts48">C2</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="28" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #edf4f9;"><p class="rvps2"><span class="rvts48">A3</span></p>
+</td>
+<td width="36" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #edf4f9;"><p class="rvps3"><span class="rvts48">B3</span></p>
+</td>
+<td width="36" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #edf4f9;"><p class="rvps27"><span class="rvts48">C3</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td colspan="3" width="101" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #ffffff;"><p class="rvps2"><span class="rvts48">multi span</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td rowspan="3" width="28" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #edf4f9;"><p class="rvps2"><span class="rvts48">A5-7</span></p>
+</td>
+<td width="36" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #edf4f9;"><p class="rvps3"><span class="rvts48">5</span></p>
+</td>
+<td width="36" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #edf4f9;"><p class="rvps27"><span class="rvts48">5</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="36" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #ffffff;"><p class="rvps2"><span class="rvts48">six</span></p>
+</td>
+<td width="36" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #ffffff;"><p class="rvps2"><span class="rvts48">six</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="36" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #edf4f9;"><p class="rvps2"><span class="rvts48">seven</span></p>
+</td>
+<td width="36" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #edf4f9;"><p class="rvps2"><span class="rvts48">seven</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="28" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #ffffff;"><p class="rvps2"><span class="rvts48">split</span></p>
+</td>
+<td width="36" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #ffffff;"><p class="rvps2"><span class="rvts48">over</span></p>
+</td>
+<td width="36" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #ffffff;"><p class="rvps2"><span class="rvts48">3 lines</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="28" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #edf4f9;"><p class="rvps2"><span class="rvts48">A9</span></p>
+</td>
+<td width="36" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #edf4f9;"><p class="rvps3"><span class="rvts48">B9</span></p>
+</td>
+<td width="36" valign="top" style="border-color: #000000; border-style: solid; padding: 0px; background-color: #edf4f9;"><p class="rvps27"><span class="rvts48">C9</span></p>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="WikiWordLinks"></a>
+<span class="rvts47">WikiWord Links:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">CapitalizedWordsStuckTogether (or&nbsp;</span><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/WikiWord">WikiWords</a><span class="rvts48">) will produce a link automatically if preceded by whitespace or parenthesis.&nbsp;</span><br/><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem29.png"><span class="rvts48">&nbsp;If you want to link to a topic in a different web write&nbsp;</span><span class="rvts49">Otherweb.TopicName</span><span class="rvts48">.&nbsp;</span><br/><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem28.png"><span class="rvts48">&nbsp;To link to a topic in a subweb write&nbsp;</span><span class="rvts49">Otherweb.Subweb.TopicName</span><span class="rvts48">.&nbsp;</span><br/><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem27.png"><span class="rvts48">&nbsp;The link label excludes the name of the web, e.g. only the topic name is shown. As an exception, the name of the web is shown for the WebHome topic.&nbsp;</span><br/><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem26.png"><span class="rvts48">&nbsp;Dots&nbsp;</span><span class="rvts49">'.'</span><span class="rvts48">&nbsp;are used to separate webs and subwebs from topic names and therefore cannot be used in topic names.</span></p>
+<p class="rvps17"><span class="rvts48">It's generally a good idea to use the&nbsp;</span><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TWikiVariables">TWikiVariables</a><span class="rvts48">&nbsp;%SYSTEMWEB% and %USERSWEB% instead of TWiki and Main.</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49">WebStatistics</span></p>
+<p class="rvps21"><span class="rvts49"><br/></span></p>
+<p class="rvps21"><span class="rvts49">Sandbox.WebNotify</span></p>
+<p class="rvps21"><span class="rvts49"><br/></span></p>
+<p class="rvps21"><span class="rvts49">Sandbox.WebHome</span></p>
+<p class="rvps21"><span class="rvts49"><br/></span></p>
+<p class="rvps21"><span class="rvts49">Sandbox.Subweb.TopicName</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps17"><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/WebStatistics">WebStatistics</a></p>
+<p class="rvps17"><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/Sandbox/WebNotify">WebNotify</a></p>
+<p class="rvps17"><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/Sandbox/WebHome">Sandbox</a></p>
+<p class="rvps17"><a class="rvts50" href="file:///D:%5C_hp_work%5Cstorage%5CQuick-tip-Reference%5CTwiki%5CTextFormattingRules%20(%20TWiki%20(%20TWiki.htm#MyAnchor" title="simulated link">TopicName</a></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="TheAnchors"></a>
+<span class="rvts47">Anchors:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">You can define a reference inside a TWiki topic (called an anchor name) and link to that. To&nbsp;</span><span class="rvts54">define</span><span class="rvts48">&nbsp;an anchor write&nbsp;</span><span class="rvts49">#AnchorName</span><span class="rvts48">&nbsp;at the beginning of a line. The anchor name must be a&nbsp;</span><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/WikiWord">WikiWord</a><span class="rvts48">&nbsp;of no more than 32 characters. To&nbsp;</span><span class="rvts54">link</span><span class="rvts48">&nbsp;to an anchor name use the&nbsp;</span><span class="rvts49">[[MyTopic#MyAnchor]]</span><span class="rvts48">&nbsp;syntax. You can omit the topic name if you want to link within the same topic.</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49">[[WikiWord#NotThere]]</span></p>
+<p class="rvps21"><span class="rvts49"><br/></span></p>
+<p class="rvps21"><span class="rvts49">[[#MyAnchor][Jump]]</span></p>
+<p class="rvps21"><span class="rvts49"><br/></span></p>
+<p class="rvps21"><span class="rvts49">#MyAnchor</span></p>
+<p class="rvps21"><span class="rvts49">To here</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps17"><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/WikiWord#NotThere">WikiWord#NotThere</a></p>
+<p class="rvps17"><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TextFormattingRules#MyAnchor">Jump</a></p>
+<p class="rvps17"><a name="MyAnchor"></a>
+<span class="rvts48">To here</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="ExternalLinks"></a>
+<span class="rvts47">External Links:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">URLs starting with&nbsp;</span><span class="rvts49">file</span><span class="rvts48">,&nbsp;</span><span class="rvts49">ftp</span><span class="rvts48">,&nbsp;</span><span class="rvts49">gopher</span><span class="rvts48">,&nbsp;</span><span class="rvts49">http</span><span class="rvts48">,&nbsp;</span><span class="rvts49">https</span><span class="rvts48">,&nbsp;</span><span class="rvts49">irc</span><span class="rvts48">,&nbsp;</span><span class="rvts49">mailto</span><span class="rvts48">,&nbsp;</span><span class="rvts49">news</span><span class="rvts48">,&nbsp;</span><span class="rvts49">nntp</span><span class="rvts48">&nbsp;and&nbsp;</span><span class="rvts49">telnet</span><span class="rvts48">&nbsp;are linked automatically if preceded by whitespace or parenthesis. External links are indicated with a trailing&nbsp;</span><img width="13" height="12" alt="" style="padding : 1px;" src="lib/NewItem30.png"><span class="rvts48">&nbsp;icon, and open up in a new browser tab or window; the behavior of both can be set in configure or preferences variables (see</span><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TWikiExternalLinks">TWikiExternalLinks</a><span class="rvts48">&nbsp;for details). Links can be prevented with an&nbsp;</span><span class="rvts49">!</span><span class="rvts48">&nbsp;exclamation point prefix.</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49">http://twiki.org</span></p>
+<p class="rvps21"><span class="rvts49"><br/></span></p>
+<p class="rvps21"><span class="rvts49">https://google.com</span></p>
+<p class="rvps21"><span class="rvts49"><br/></span></p>
+<p class="rvps21"><span class="rvts49">!http://escaped-link</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps17"><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/exit.cgi?url=http://twiki.org">http://twiki.org</a><a href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/exit.cgi?url=http://twiki.org"><img width="13" height="12" alt="" style="padding : 1px;" src="lib/NewItem32.png"></a></p>
+<p class="rvps17"><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/exit.cgi?url=https://google.com">https://google.com</a><a href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/exit.cgi?url=https://google.com"><img width="13" height="12" alt="" style="padding : 1px;" src="lib/NewItem31.png"></a></p>
+<p class="rvps17"><span class="rvts48">http://escaped-link</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="ForcedLinks"></a>
+<span class="rvts47">Forced Links:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">Use double square brackets to create forced links: Write&nbsp;</span><span class="rvts49">[[link]]</span><span class="rvts48">&nbsp;or&nbsp;</span><span class="rvts49">[[link][label]]</span><span class="rvts48">&nbsp;to force a link. Use the former for singleton words and if&nbsp;</span><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TextFormattingRules#DisableLinks">automatic linking is disabled</a><span class="rvts48">. Use the latter one to specify a link label other than the link. For the link, you can use internal link references (e.g.&nbsp;</span><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/WikiWord">WikiWords</a><span class="rvts48">) and URLs (e.g. http://TWiki.org/).&nbsp;</span><br/><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem35.png"><span class="rvts48">&nbsp;Anchor names can be added to create a link to a specific place in a document.&nbsp;</span><br/><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem34.png"><span class="rvts48">&nbsp;To "escape" double square brackets that would otherwise make a link, prefix the leading left square bracket with an exclamation point.&nbsp;</span><br/><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem33.png"><span class="rvts48">&nbsp;The&nbsp;</span><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/VarTOPICTITLE">topic title</a><span class="rvts48">&nbsp;instead of the topic name is shown for&nbsp;</span><span class="rvts49">[[WikiWord]]</span><span class="rvts48">&nbsp;links if the SHOWTOPICTITLELINK preferences setting is enabled.</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49">[[WikiWord]]</span></p>
+<p class="rvps21"><span class="rvts49"><br/></span></p>
+<p class="rvps21"><span class="rvts49">[[WikiWord#TheSyntax]]</span></p>
+<p class="rvps21"><span class="rvts49"><br/></span></p>
+<p class="rvps21"><span class="rvts49">[[WikiSyntax][wiki syntax]]</span></p>
+<p class="rvps21"><span class="rvts49"><br/></span></p>
+<p class="rvps21"><span class="rvts49">[[http://gnu.org/][GNU]]</span></p>
+<p class="rvps21"><span class="rvts49"><br/></span></p>
+<p class="rvps21"><span class="rvts49">[[Singleton]]</span></p>
+<p class="rvps21"><span class="rvts49"><br/></span></p>
+<p class="rvps21"><span class="rvts49">escaped:</span></p>
+<p class="rvps21"><span class="rvts49">![[WikiSyntax]]</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps17"><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/WikiWord">WikiWord</a></p>
+<p class="rvps17"><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/WikiWord#TheSyntax">WikiWord#TheSyntax</a></p>
+<p class="rvps17"><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/WikiSyntax">wiki syntax</a></p>
+<p class="rvps17"><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/exit.cgi?url=http://gnu.org/">GNU</a><a href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/exit.cgi?url=http://gnu.org/"><img width="13" height="12" alt="" style="padding : 1px;" src="lib/NewItem36.png"></a></p>
+<p class="rvps17"><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/edit/TWiki/Singleton?topicparent=TWiki.TextFormattingRules;nowysiwyg=0" title="Singleton (this topic does not yet exist; you can create it)">Singleton</a></p>
+<p class="rvps17"><span class="rvts48">escaped: [[WikiSyntax]]</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="TopicTitleLinks"></a>
+<span class="rvts47">Topic Title Links:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">Use double square brackets and a plus sign to create links with topic title: Write&nbsp;</span><span class="rvts49">[[+TopicName]]</span><span class="rvts48">&nbsp;or</span><span class="rvts49">[[+Web.TopicName]]</span><span class="rvts48">&nbsp;to show the&nbsp;</span><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/VarTOPICTITLE">topic title</a><span class="rvts48">&nbsp;instead of the topic name. The topic title is defined by the form field named "Title", the topic preferences setting named TITLE, or the topic name if neither exists.&nbsp;</span><br/><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem37.png"><span class="rvts48">&nbsp;An alternative syntax is&nbsp;</span><span class="rvts49">[[TopicName][$topictitle]]</span><span class="rvts48">&nbsp;or&nbsp;</span><span class="rvts49">[[Web.TopicName][$topictitle]]</span><span class="rvts48">.</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49">[[+BugN1234]]</span></p>
+<p class="rvps21"><span class="rvts49"><br/></span></p>
+<p class="rvps21"><span class="rvts49">[[+Bugs.BugN1234]]</span></p>
+<p class="rvps21"><span class="rvts49"><br/></span></p>
+<p class="rvps21"><span class="rvts49">[[BugN1234][$topictitle]]</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps17"><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TWikiEditingShorthand">The sky is falling</a></p>
+<p class="rvps17"><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TWikiEditingShorthand">The sky is falling</a></p>
+<p class="rvps17"><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TWikiEditingShorthand">The sky is falling</a></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="PreventLink"></a>
+<span class="rvts47">Prevent a Link:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">Prevent a&nbsp;</span><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/WikiWord">WikiWord</a><span class="rvts48">&nbsp;from being linked by prepending it with an exclamation point.</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49">!SunOS</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><span class="rvts48">SunOS</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="DisableLinks"></a>
+<span class="rvts47">Disable Links:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">You can disable automatic linking of&nbsp;</span><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/WikiWord">WikiWords</a><span class="rvts48">&nbsp;by surrounding text with&nbsp;</span><span class="rvts49">&lt;noautolink&gt;</span><span class="rvts48">&nbsp;and&nbsp;</span><span class="rvts49">&lt;/noautolink&gt;</span><span class="rvts48">&nbsp;tags.&nbsp;</span><br/><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem38.png"><span class="rvts48">&nbsp;It is possible to turn off all auto-linking with a NOAUTOLINK preferences setting.</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49"> &lt;noautolink&gt;</span></p>
+<p class="rvps21"><span class="rvts49"> RedHat &amp; SuSE</span></p>
+<p class="rvps21"><span class="rvts49"> &lt;/noautolink&gt;</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps17"><span class="rvts48">RedHat &amp; SuSE</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="MailtoLinks"></a>
+<span class="rvts47">Mailto Links:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">E-mail addresses are linked automatically. To create e-mail links that have more descriptive link text, specify subject lines or message bodies, or omit the e-mail address, you can write&nbsp;</span><span class="rvts49">[[mailto:user@domain][descriptive text]]</span><span class="rvts48">.</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49">a@b.com</span></p>
+<p class="rvps21"><span class="rvts49"><br/></span></p>
+<p class="rvps21"><span class="rvts49">[[mailto:a@b.com]\</span></p>
+<p class="rvps21"><span class="rvts49">[Mail]]</span></p>
+<p class="rvps21"><span class="rvts49"><br/></span></p>
+<p class="rvps21"><span class="rvts49">[[mailto:?subject=\</span></p>
+<p class="rvps21"><span class="rvts49">Hi][Hi]]</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps17"><a class="rvts50" href="mailto:a@b.com">a@b.com</a></p>
+<p class="rvps17"><a class="rvts50" href="mailto:a@b.com">Mail</a></p>
+<p class="rvps17"><a class="rvts50" href="mailto:?subject=Hi">Hi</a></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="TwitterLinks"></a>
+<span class="rvts47">Twitter Links:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">@twitter IDs are linked automatically. The link rule is defined by the&nbsp;</span><span class="rvts49">{Links}{TwitterUrlPattern}</span><span class="rvts48">&nbsp;configure setting.</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49">@twiki</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps17"><a class="rvts50" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/exit.cgi?url=https://twitter.com/twiki">@twiki</a><a href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/exit.cgi?url=https://twitter.com/twiki"><img width="13" height="12" alt="" style="padding : 1px;" src="lib/NewItem39.png"></a></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="VerbatimText"></a>
+<span class="rvts47">Verbatim Text:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">Surround code excerpts and other formatted text with&nbsp;</span><span class="rvts49">&lt;verbatim&gt;</span><span class="rvts48">&nbsp;and&nbsp;</span><span class="rvts49">&lt;/verbatim&gt;</span><span class="rvts48">&nbsp;tags.&nbsp;</span><br/><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem41.png"><span class="rvts48">&nbsp;The&nbsp;</span><span class="rvts49">verbatim</span><span class="rvts48">&nbsp;tag disables HTML code. Use&nbsp;</span><span class="rvts49">&lt;pre&gt;</span><span class="rvts48">&nbsp;and&nbsp;</span><span class="rvts49">&lt;/pre&gt;</span><span class="rvts48">&nbsp;tags instead if you want the HTML code within the tags to be interpreted.&nbsp;</span><br/><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem40.png"><span class="rvts48">&nbsp;Preferences variables (* Set NAME = value) are set within verbatim tags.</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49">&lt;verbatim&gt;</span></p>
+<p class="rvps21"><span class="rvts49">class CatAnimal {</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp;void purr() {</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp; &nbsp;&lt;code here&gt;</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp;}</span></p>
+<p class="rvps21"><span class="rvts49">}</span></p>
+<p class="rvps21"><span class="rvts49">&lt;/verbatim&gt;</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49">class CatAnimal {</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp;void purr() {</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp; &nbsp;&lt;code here&gt;</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp;}</span></p>
+<p class="rvps21"><span class="rvts49">}</span></p>
+<p class="rvps2"><span class="rvts57"><br/></span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="LiteralText"></a>
+<span class="rvts47">Literal Text:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts48">TWiki generates HTML code from TWiki shorthand.&nbsp;</span><span class="rvts47">Experts</span><span class="rvts48">&nbsp;surround anything that must be output literally in the HTML code, without the application of TWiki shorthand rules, with&nbsp;</span><span class="rvts49">&lt;literal&gt;..&lt;/literal&gt;</span><span class="rvts48">&nbsp;tags.&nbsp;</span><br/><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem43.png"><span class="rvts48">&nbsp;Any HTML within literal tags&nbsp;</span><span class="rvts47">must</span><span class="rvts48">&nbsp;be well formed i.e. all tags must be properly closed before the end of the literal block.&nbsp;</span><br/><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem42.png"><span class="rvts48">&nbsp;TWiki Variables are expanded within literal blocks.</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49">&lt;literal&gt;</span></p>
+<p class="rvps21"><span class="rvts49">| Not | A | Table |</span></p>
+<p class="rvps21"><span class="rvts49">&lt;literal&gt;</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><span class="rvts48">| Not | A | Table |</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><a name="ProtectedText"></a>
+<span class="rvts47">Protected Text:</span><span class="rvts48">&nbsp;</span><br/><span class="rvts47">Experts</span><span class="rvts48">&nbsp;protect text from mangling by WYSIWYG editors using&nbsp;</span><span class="rvts49">&lt;sticky&gt;..&lt;/sticky&gt;</span><span class="rvts48">&nbsp;tags. Sticky tags don't have any effect on normal topic display; they are only relevant when content has to be protected from a WYSIWYG editor (usually because it isn't well-formed HTML, or because it is HTML that WYSIWYG would normally filter out or modify). Protected content appears as plain text in the WYSIWYG editor.</span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps21"><span class="rvts49">&lt;sticky&gt;</span></p>
+<p class="rvps21"><span class="rvts49">&lt;div&gt;</span></p>
+<p class="rvps21"><span class="rvts49">This div is required</span></p>
+<p class="rvps21"><span class="rvts49">&lt;/div&gt;</span></p>
+<p class="rvps21"><span class="rvts49">&lt;/sticky&gt;</span></p>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+</td>
+<td valign="top" style="border-color: #000000; border-style: solid; padding: 3px; background-color: #ffffff;"><p class="rvps2"><span class="rvts48">This div is required</span></p>
+</td>
+</tr>
+</table>
+</div>
+<h2 class="rvps20"><a name="Using_HTML_CSS_and_JavaScript"></a>
+<span class="rvts0"><span class="rvts46">Using HTML, CSS and JavaScript</span></span></h2>
+<p class="rvps17"><span class="rvts44">You can use most HTML tags in TWiki topics without a problem. This is useful where you want to add some content that is formatted in a way that is not supported using&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TextFormattingRules#TWikiShorthand">TWiki shorthand</a><span class="rvts44">, for example, you can write</span><span class="rvts58">&lt;strike&gt;deleted text&lt;/strike&gt;</span><span class="rvts44">&nbsp;to get&nbsp;</span><span class="rvts59">deleted text</span><span class="rvts44">.</span></p>
+<p class="rvps17"><span class="rvts44">There are a few usability and technical considerations to keep in mind:</span></p>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px" class="rvps18"><span class="rvts44">On collaboration pages, it's better&nbsp;</span><span class="rvts60">not</span><span class="rvts44">&nbsp;to use HTML, but to use TWiki shorthand instead - this keeps the text uncluttered and easy to edit using the plaintext editor.</span></li>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts44">If you&nbsp;</span><span class="rvts43">must</span><span class="rvts44">&nbsp;use HTML, use&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/exit.cgi?url=http://www.w3.org/TR/xhtml1/">XHTML 1.0 Transitional</a><a href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/exit.cgi?url=http://www.w3.org/TR/xhtml1/"><img width="13" height="12" alt="" style="padding : 1px;" src="lib/NewItem15.png"></a><span class="rvts44">&nbsp;syntax.</span></li>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts44">Use&nbsp;</span><span class="rvts58">&lt;literal&gt;..&lt;/literal&gt;</span><span class="rvts44">&nbsp;tags around blocks of HTML to avoid accidental interpretation of TWiki shorthand within the HTML.</span></li>
+<li style="margin-left: 0px" class="rvps18"><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem14.png"><span class="rvts44">&nbsp;Script tags may be filtered out, at the discretion of your TWiki administrator.</span></li>
+</ul>
+<p class="rvps17"><span class="rvts44">Recommendations when pasting HTML from other sources (using the plain-text editor):</span></p>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px" class="rvps18"><span class="rvts44">Copy only text between&nbsp;</span><span class="rvts58">&lt;body&gt;</span><span class="rvts44">&nbsp;and&nbsp;</span><span class="rvts58">&lt;/body&gt;</span><span class="rvts44">&nbsp;tags.</span></li>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts44">Remove all empty lines. TWiki inserts&nbsp;</span><span class="rvts58">&lt;p /&gt;</span><span class="rvts44">&nbsp;paragraph tags on empty lines, which causes problems if done between HTML tags that do not allow paragraph tags, like for example between table tags.</span></li>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts44">Remove leading spaces. TWiki might interpret some text as lists.</span></li>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts44">Do not span a tag over more than one line. TWiki requires that the opening and closing angle brackets -&nbsp;</span><span class="rvts61">&lt;...&gt;</span><span class="rvts44">&nbsp;- of a HTML tag are on the same line, or the tag will be broken.</span></li>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts44">In your HTML editing program, save without hard line breaks on text wrap.</span></li>
+</ul>
+<p class="rvps17"><span class="rvts44">When using a WYSIWYG editor, you can just copy-paste directly into the editor, and the content will be converted to TWiki shorthand automatically when you save.</span></p>
+<p class="rvps17"><span class="rvts44">It is also possible to add Cascading Style Sheets (</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/exit.cgi?url=http://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS</a><a href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/exit.cgi?url=http://en.wikipedia.org/wiki/Cascading_Style_Sheets"><img width="13" height="12" alt="" style="padding : 1px;" src="lib/NewItem13.png"></a><span class="rvts44">) and&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/exit.cgi?url=http://en.wikipedia.org/wiki/JavaScript">JavaScript</a><a href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/exit.cgi?url=http://en.wikipedia.org/wiki/JavaScript"><img width="13" height="12" alt="" style="padding : 1px;" src="lib/NewItem12.png"></a><span class="rvts44">&nbsp;code to TWiki pages, which can be used to make TWiki application more interactive. To prevent TWiki from interpreting some text as markup, it can be enclosed in HTML-escaped&nbsp;</span><span class="rvts58">&lt;pre&gt;</span><span class="rvts44">-tags.</span></p>
+<div class="rvps2"><table border="0" cellpadding="5" cellspacing="10" style="border-width: 0px; border-spacing: 10px;">
+<tr valign="top">
+<td width="287" valign="top" style="padding: 5px; background-color: #dddddd;"><p class="rvps3"><span class="rvts47">JavaScript Example:</span></p>
+</td>
+<td width="255" valign="top" style="padding: 5px; background-color: #dddddd;"><p class="rvps3"><span class="rvts47">CSS Example:</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="287" valign="top" style="padding: 5px; background-color: #eeeeee;"><p class="rvps21"><span class="rvts49">&lt;!-- &lt;pre&gt; --&gt;</span></p>
+<p class="rvps21"><span class="rvts49">&lt;script language="javascript"&gt;</span></p>
+<p class="rvps21"><span class="rvts49">&lt;!--</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp;// put your JavaScript code here</span></p>
+<p class="rvps21"><span class="rvts49">//--&gt;</span></p>
+<p class="rvps21"><span class="rvts49">&lt;/script&gt;</span></p>
+<p class="rvps21"><span class="rvts49">&lt;!-- &lt;/pre&gt; --&gt;</span></p>
+<p class="rvps2"><span class="rvts47"><br/></span></p>
+</td>
+<td width="255" valign="top" style="padding: 5px; background-color: #eeeeee;"><p class="rvps21"><span class="rvts49">&lt;!-- &lt;pre&gt; --&gt;</span></p>
+<p class="rvps21"><span class="rvts49">&lt;style type="text/css"&gt;</span></p>
+<p class="rvps21"><span class="rvts49"> &nbsp;/* put your CSS code here */</span></p>
+<p class="rvps21"><span class="rvts49">&lt;/style&gt;</span></p>
+<p class="rvps21"><span class="rvts49">&lt;!-- &lt;/pre&gt; --&gt;</span></p>
+<p class="rvps2"><span class="rvts57"><br/></span></p>
+</td>
+</tr>
+</table>
+</div>
+<h2 class="rvps20"><a name="Hyperlinks"></a>
+<span class="rvts0"><span class="rvts46">Hyperlinks</span></span></h2>
+<p class="rvps17"><span class="rvts44">Being able to create links without any special formatting is a core TWiki feature, made possible with&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/WikiWord">WikiWords</a><span class="rvts44">&nbsp;and inline URLs.</span></p>
+<h3 class="rvps22"><a name="Internal_Links"></a>
+<span class="rvts0"><span class="rvts60">Internal Links</span></span></h3>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/GoodStyle">GoodStyle</a><span class="rvts44">&nbsp;is a&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/WikiWord">WikiWord</a><span class="rvts44">&nbsp;that links to the GoodStyle topic located in the current web.</span></li>
+</ul>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/edit/TWiki/NotExistingYet?topicparent=TWiki.TextFormattingRules;nowysiwyg=0" title="NotExistingYet (this topic does not yet exist; you can create it)">NotExistingYet</a><span class="rvts44">&nbsp;is a topic waiting to be written because it is a red-link. Create the topic by clicking on the link. (Try clicking, but then,&nbsp;</span><span class="rvts60">Cancel</span><span class="rvts44">&nbsp;- creating the topic would wreck this example!)</span></li>
+</ul>
+<h3 class="rvps22"><a name="External_Links"></a>
+<span class="rvts0"><span class="rvts60">External Links</span></span></h3>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px" class="rvps18"><span class="rvts58">http://...</span><span class="rvts44">,&nbsp;</span><span class="rvts58">https://...</span><span class="rvts44">,&nbsp;</span><span class="rvts58">ftp://...</span><span class="rvts44">,&nbsp;</span><span class="rvts58">gopher://...</span><span class="rvts44">,&nbsp;</span><span class="rvts58">news://...</span><span class="rvts44">,&nbsp;</span><span class="rvts58">file://...</span><span class="rvts44">,&nbsp;</span><span class="rvts58">telnet://...</span><span class="rvts44">&nbsp;and&nbsp;</span><span class="rvts58">mailto:...@...</span><span class="rvts44">&nbsp;are linked automatically.</span></li>
+</ul>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px" class="rvps18"><span class="rvts44">Write&nbsp;</span><span class="rvts58">[[URL][label]]</span><span class="rvts44">&nbsp;to get an external link with a descriptive text for the link, such as&nbsp;</span><span class="rvts58">[[http://google.com/][Google home page]]</span><span class="rvts44">&nbsp;to get&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/exit.cgi?url=http://google.com/">Google home page</a><a href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/exit.cgi?url=http://google.com/"><img width="13" height="12" alt="" style="padding : 1px;" src="lib/NewItem11.png"></a><span class="rvts44">.</span></li>
+</ul>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px" class="rvps18"><span class="rvts44">E-mail addresses like&nbsp;</span><span class="rvts58">name@domain.com</span><span class="rvts44">&nbsp;are linked automatically.</span></li>
+</ul>
+<h2 class="rvps20"><a name="TWiki_Variables"></a>
+<span class="rvts0"><span class="rvts46">TWiki Variables</span></span></h2>
+<p class="rvps17"><span class="rvts44">TWiki Variables are names enclosed in percent signs that are that are expanded to some other text when the topic is displayed. For example,&nbsp;</span><span class="rvts58">%TOPIC%</span><span class="rvts44">&nbsp;is expanded to&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TWikiVariablesQuickStart">TWikiVariablesQuickStart</a><span class="rvts44">. Some variables can take arguments in curly braces - for example,&nbsp;</span><span class="rvts58">%INCLUDE{"OtherTopic" arg="value"}%</span><span class="rvts44">.</span></p>
+<p class="rvps17"><span class="rvts44">Many TWiki variables are built-in, and others are predefined for your convenience.&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TWikiVariables">TWikiVariables</a><span class="rvts44">&nbsp;describes how you can also define your own TWiki Variables at the entire site, individual web, or individual topic level. Variables are fully expanded&nbsp;</span><span class="rvts43">before</span><span class="rvts44">&nbsp;any of the TWiki text formatting rules are applied.</span></p>
+<p class="rvps17"><span class="rvts60">Commonly used variables:</span></p>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px" class="rvps18"><span class="rvts58">%TOC%</span><span class="rvts44">&nbsp;: Automatically generates a&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/VarTOC">table of contents</a><span class="rvts44">&nbsp;based on headings in a topic - see the top of this page for an example.</span></li>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts58">%WEB%</span><span class="rvts44">&nbsp;: The current web, is&nbsp;</span><span class="rvts60">TWiki</span><span class="rvts44">.</span></li>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts58">%TOPIC%</span><span class="rvts44">&nbsp;: The current topic name, is&nbsp;</span><span class="rvts60">TWikiVariablesQuickStart</span><span class="rvts44">.</span></li>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts58">%ATTACHURL%</span><span class="rvts44">&nbsp;: The attachment URL of the current topic. Example usage: If you attach a file to a topic you can refer to it as&nbsp;</span><span class="rvts61">%ATTACHURL%/image.gif</span><span class="rvts44">&nbsp;to show the URL of the file or the image in your text.</span></li>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts58">%INCLUDE{"SomeTopic"}%</span><span class="rvts44">&nbsp;: Server side include,&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/VarINCLUDE">includes another topic</a><span class="rvts44">. The current web is the default web. Example:&nbsp;</span><span class="rvts61">%INCLUDE{"TWiki.SiteMap"}%</span></li>
+<li style="margin-left: 0px" class="rvps18"><span class="rvts58">%SEARCH{"sushi"}%</span><span class="rvts44">&nbsp;:&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/VarSEARCH">Inline search</a><span class="rvts44">&nbsp;showing the search result embedded in a topic.&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/FormattedSearch">FormattedSearch</a><span class="rvts44">&nbsp;gives you control over formatting, used to create web-based applications.</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TWikiDocGraphics">Documentation Graphics</a><span class="rvts44">: There are many graphics available to use in your topics. Use&nbsp;</span><span class="rvts58">%ICON{"help"}%</span><span class="rvts44">,&nbsp;</span><span class="rvts58">%ICON{"tip"}%</span><span class="rvts44">, and&nbsp;</span><span class="rvts58">%ICON{"warning"}%</span><span class="rvts44">&nbsp;to get:&nbsp;</span><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem10.png"><span class="rvts44">,&nbsp;</span><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem9.png"><span class="rvts44">, and&nbsp;</span><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem8.png"><span class="rvts44">, respectively.</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TWikiVariablesWizard">Use the TWiki Variables Wizard</a><span class="rvts44">&nbsp;to build your variables.</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TWikiVariables">See all TWiki Variables</a><span class="rvts44">.</span></li>
+</ul>
+<p class="rvps17"><img width="16" height="16" alt="" style="padding : 1px;" src="lib/NewItem7.png"><span class="rvts44">&nbsp;To "escape" a variable, prefix it with an exclamation mark. Write:&nbsp;</span><span class="rvts58">!%SOMEVARIABLE%</span><span class="rvts44">&nbsp;to get: %SOMEVARIABLE%.</span></p>
+<h2 class="rvps20"><a name="TWikiPlugin_Formatting_Extension"></a>
+<span class="rvts0"><span class="rvts46">TWikiPlugin Formatting Extensions</span></span></h2>
+<p class="rvps17"><span class="rvts44">Plugins can extend the functionality of TWiki into many other areas. There are a huge number of TWiki plugins available from the&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/exit.cgi?url=http://twiki.org/cgi-bin/view/Plugins">Plugins</a><a href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/exit.cgi?url=http://twiki.org/cgi-bin/view/Plugins"><img width="13" height="12" alt="" style="padding : 1px;" src="lib/NewItem6.png"></a><span class="rvts44">&nbsp;web on TWiki.org.</span></p>
+<p class="rvps17"><span class="rvts44">Currently enabled plugins on this TWiki installation, as listed by&nbsp;</span><span class="rvts58">%PLUGINDESCRIPTIONS%</span><span class="rvts44">:</span></p>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/SpreadSheetPlugin">SpreadSheetPlugin</a><span class="rvts44">&nbsp;(2013-10-10, $Rev: 26482 (2013-10-14) $): Add spreadsheet calculation like&nbsp;</span><span class="rvts58">"$SUM( $ABOVE() )"</span><span class="rvts44">&nbsp;to TWiki tables or anywhere in topic text</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/ActionTrackerPlugin">ActionTrackerPlugin</a><span class="rvts44">&nbsp;(2013-03-05, $Rev: 25364 (2013-03-05) $): Adds support for action tags in topics, and automatic notification of action statuses</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/BackupRestorePlugin">BackupRestorePlugin</a><span class="rvts44">&nbsp;(2013-02-16, $Rev: 25448 (2013-10-14) $): Administrator utility to backup, restore and upgrade a TWiki site</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/ColorPickerPlugin">ColorPickerPlugin</a><span class="rvts44">&nbsp;(2013-02-15, $Rev: 25074 (2013-10-14) $): Color picker, packaged for use in TWiki forms and TWiki applications</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/CommentPlugin">CommentPlugin</a><span class="rvts44">&nbsp;(2013-02-10, $Rev: 24977 (2013-10-14) $): Quickly post comments to a page without an edit/preview/save cycle</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/DatePickerPlugin">DatePickerPlugin</a><span class="rvts44">&nbsp;(2013-09-04, $Rev: 26272 (2013-10-14) $): Pop-up calendar with date picker, for use in TWiki forms, HTML forms and TWiki plugins</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/EditTablePlugin">EditTablePlugin</a><span class="rvts44">&nbsp;(2013-01-13, $Rev: 25108 (2013-10-14) $): Edit TWiki tables using edit fields, date pickers and drop down boxes</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/ExitPlugin">ExitPlugin</a><span class="rvts44">&nbsp;(2010-12-12, 1.6): Redirect links to external sites via a page of your choice, such as to remove topic names from HTTP referrer headers</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/ExplicitNumberingPlugin">ExplicitNumberingPlugin</a><span class="rvts44">&nbsp;(1.6, $Rev: 19806 (2010-11-09) $): Use the&nbsp;</span><span class="rvts61">##.,</span><span class="rvts44">&nbsp;</span><span class="rvts61">##..</span><span class="rvts44">&nbsp;etc. notation to insert outline numbering sequences (1, 1.1, 2, 2.1) in topic's text. Also support numbered headings.</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/FilterPlugin">FilterPlugin</a><span class="rvts44">&nbsp;(2010-07-25, $Rev: 19240 (2010-07-25) $): Substitute and extract information from content by using regular expressions</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/FindElsewherePlugin">FindElsewherePlugin</a><span class="rvts44">&nbsp;($Rev: 21525 (2011-06-16) $, 2011-06-16): Automatically link to topic in other web(s) if it isn't found in the current web</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/GluePlugin">GluePlugin</a><span class="rvts44">&nbsp;(2.1, $Rev: 18553 (2010-04-30) $): Enable markup to span multiple lines</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/HeadlinesPlugin">HeadlinesPlugin</a><span class="rvts44">&nbsp;(2013-02-16, $Rev: 25104 (2013-10-14) $): Show headline news in TWiki pages based on RSS and ATOM news feeds from external sites</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/InterwikiPlugin">InterwikiPlugin</a><span class="rvts44">&nbsp;(2013-02-12, $Rev: 25126 (2013-10-14) $): Text&nbsp;</span><span class="rvts61">ExternalSite:Page</span><span class="rvts44">&nbsp;links to a page on an external site based on aliases defined in a rules topic</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/JQueryPlugin">JQueryPlugin</a><span class="rvts44">&nbsp;(2013-09-28, $Rev: 26439 (2013-10-14) $): jQuery JavaScript library for TWiki</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/LdapNgPlugin">LdapNgPlugin</a><span class="rvts44">&nbsp;(2013-02-01, $Rev: 24846 (2013-02-04) $): Query and display data from an LDAP directory</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/NewUserPlugin">NewUserPlugin</a><span class="rvts44">&nbsp;(2011-01-14, $Rev: 20222 (2011-01-14) $): Create a user topic if it does not exist yet</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/PreferencesPlugin">PreferencesPlugin</a><span class="rvts44">&nbsp;(2013-09-08, $Rev: 26286 (2013-10-14) $): Allows editing of preferences using fields predefined in a form</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/QCWebQueryPlugin">QCWebQueryPlugin</a><span class="rvts44">&nbsp;(0.5): This plugin is useful to display links or data results from QC.</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/RevisionLinkPlugin">RevisionLinkPlugin</a><span class="rvts44">&nbsp;(2.2, $Rev: 19837 (2010-11-10) $): Enable linking to specific topic revisions</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/SetGetPlugin">SetGetPlugin</a><span class="rvts44">&nbsp;(2013-01-28, $Rev: 24822 (2013-10-14) $): Set and get variables in topics, optionally persistently across topic views</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/SlideShowPlugin">SlideShowPlugin</a><span class="rvts44">&nbsp;(2013-04-07, $Rev: 25715 (2013-10-14) $): Create web based presentations based on topics with headings.</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/SmiliesPlugin">SmiliesPlugin</a><span class="rvts44">&nbsp;(2013-01-13, $Rev: 24784 (2013-10-14) $): Render smilies as icons, like&nbsp;</span><span class="rvts58">&nbsp;:-)&nbsp;</span><span class="rvts44">&nbsp;as&nbsp;</span><img alt="" style="padding : 1px;" src="lib/NewItem5.png"><span class="rvts44">&nbsp;or&nbsp;</span><span class="rvts58">&nbsp;:eek:&nbsp;</span><span class="rvts44">&nbsp;as&nbsp;</span><img alt="" style="padding : 1px;" src="lib/NewItem4.png"></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/SyntaxHighlightingPlugin">SyntaxHighlightingPlugin</a><span class="rvts44">&nbsp;(2013-12-11, $Rev): Highlight source code fragments for many languages</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TablePlugin">TablePlugin</a><span class="rvts44">&nbsp;(2013-09-25, $Rev: 26425 (2013-10-14) $): Control attributes of tables and sorting of table columns</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TagMePlugin">TagMePlugin</a><span class="rvts44">&nbsp;(2013-03-12, $Rev: 25778 (2013-10-14) $): Tag wiki content collectively to find content by keywords</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TinyMCEPlugin">TinyMCEPlugin</a><span class="rvts44">&nbsp;(2013-09-18, $Rev: 26397 (2013-10-14) $): Integration of the Tiny MCE WYSIWYG Editor</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TreePlugin">TreePlugin</a><span class="rvts44">&nbsp;(2010-08-21, $Rev: 19347 (2010-08-21) $): Dynamically generate TWiki topic trees based on the parent-child relationship of topics</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TwistyPlugin">TwistyPlugin</a><span class="rvts44">&nbsp;(2013-03-22, $Rev: 25508 (2013-10-14) $): Twisty section JavaScript library to open/close content dynamically</span></li>
+<li style="margin-left: 0px" class="rvps18"><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/WysiwygPlugin">WysiwygPlugin</a><span class="rvts44">&nbsp;(2013-09-18, $Rev: 26391 (2013-10-14) $): Translator framework for WYSIWYG editors</span></li>
+</ul>
+<p class="rvps17"><span class="rvts44">Check on current Plugin status and settings for this site in&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TWikiPreferences">TWikiPreferences</a><span class="rvts44">.</span></p>
+<h2 class="rvps20"><a name="Common_Editing_Errors"></a>
+<span class="rvts0"><span class="rvts46">Common Editing Errors</span></span></h2>
+<p class="rvps17"><span class="rvts44">TWiki formatting rules are fairly simple to use and quick to type. However, there are some things to watch out for, taken from the&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TextFormattingFAQ">TextFormattingFAQ</a><span class="rvts44">:</span></p>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px" class="rvps18"><span class="rvts60">Q:</span><span class="rvts44">&nbsp;Text enclosed in angle brackets like&nbsp;</span><span class="rvts58">&lt;filename&gt;</span><span class="rvts44">&nbsp;is not displayed. How can I show it as it is?</span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li style="margin-left: 0px" class="rvps19"><span class="rvts60">A:</span><span class="rvts44">&nbsp;The&nbsp;</span><span class="rvts58">'&lt;'</span><span class="rvts44">&nbsp;and&nbsp;</span><span class="rvts58">'&gt;'</span><span class="rvts44">&nbsp;characters have a special meaning in HTML, they define HTML tags. You need to escape them, so write&nbsp;</span><span class="rvts58">'&amp;lt;'</span><span class="rvts44">&nbsp;instead of&nbsp;</span><span class="rvts58">'&lt;'</span><span class="rvts44">, and&nbsp;</span><span class="rvts58">'&amp;gt;'</span><span class="rvts44">&nbsp;instead of&nbsp;</span><span class="rvts58">'&gt;'</span><span class="rvts44">.&nbsp;</span><br/><span class="rvts44">Example: Type&nbsp;</span><span class="rvts58">'prog &amp;lt;filename&amp;gt;'</span><span class="rvts44">&nbsp;to get&nbsp;</span><span class="rvts58">'prog &lt;filename&gt;'</span><span class="rvts44">.</span></li>
+</ul></ul>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px" class="rvps18"><span class="rvts60">Q:</span><span class="rvts44">&nbsp;Why is the&nbsp;</span><span class="rvts58">'&amp;'</span><span class="rvts44">&nbsp;character sometimes not displayed?</span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li style="margin-left: 0px" class="rvps19"><span class="rvts60">A:</span><span class="rvts44">&nbsp;The&nbsp;</span><span class="rvts58">'&amp;'</span><span class="rvts44">&nbsp;character has a special meaning in HTML, it starts a so-called character entity, e.g.&nbsp;</span><span class="rvts58">'&amp;copy;'</span><span class="rvts44">&nbsp;is the&nbsp;</span><span class="rvts58">©</span><span class="rvts44">&nbsp;copyright character. You need to escape&nbsp;</span><span class="rvts58">'&amp;'</span><span class="rvts44">&nbsp;to see it as it is, so write&nbsp;</span><span class="rvts58">'&amp;amp;'</span><span class="rvts44">&nbsp;instead of&nbsp;</span><span class="rvts58">'&amp;'</span><span class="rvts44">.&nbsp;</span><br/><span class="rvts44">Example: Type&nbsp;</span><span class="rvts58">'This &amp;amp; that'</span><span class="rvts44">&nbsp;to get&nbsp;</span><span class="rvts58">'This &amp; that'</span><span class="rvts44">.</span></li>
+</ul></ul>
+<p class="rvps17"><span class="rvts62">Related topics:</span><span class="rvts44">&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/WikiSyntax">WikiSyntax</a><span class="rvts44">,&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/WikiWord">WikiWord</a><span class="rvts44">,&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/WikiNotation">WikiNotation</a><span class="rvts44">,&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TextFormattingRules">TextFormattingRules</a><span class="rvts44">,&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TWikiEditingShorthand">TWikiEditingShorthand</a><span class="rvts44">,&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TWikiRenderingShortcut">TWikiRenderingShortcut</a><span class="rvts44">,&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TWikiShorthand">TWikiShorthand</a><span class="rvts44">,&nbsp;</span><a class="rvts45" href="https://mpawiki.hpswlabs.adapps.hp.com/twiki/bin/view/TWiki/TWikiVariablesQuickStart">TWikiVariablesQuickStart</a></p>
+<p class="rvps2"><span class="rvts44">&nbsp;</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4"><span class="rvts11">Created with the Personal Edition of HelpNDoc: </span><a class="rvts12" href="http://www.helpndoc.com">Free Web Help generator</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2016 by Linh Hong. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

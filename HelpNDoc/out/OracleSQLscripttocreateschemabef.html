@@ -1,0 +1,100 @@
+﻿<html>
+	
+<head>
+	<title>Oracle SQL script to create schema before install EM/Systinet</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "QuickHelp.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("OracleSQLscripttocreateschemabef");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Oracle SQL script to create schema before install EM/Systinet</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="HPeEMSystinet.html">HPe EM/Systinet</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="HPeEMSystinet.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="DataPower.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Versioncontrol.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps2"><span class="rvts39">DEFINE us = &amp;username;</span></p>
+<p class="rvps2"><span class="rvts39">DEFINE pass = "changeit";</span></p>
+<p class="rvps2"><span class="rvts39"><br/></span></p>
+<p class="rvps2"><span class="rvts39">CREATE USER &amp;&amp;us IDENTIFIED BY &amp;&amp;pass ; </span></p>
+<p class="rvps2"><span class="rvts39">GRANT SELECT ON sys.dba_pending_transactions TO &amp;&amp;us;</span></p>
+<p class="rvps2"><span class="rvts39">GRANT SELECT ON sys.pending_trans$ TO &amp;&amp;us;</span></p>
+<p class="rvps2"><span class="rvts39">GRANT SELECT ON sys.dba_2pc_pending TO &amp;&amp;us;</span></p>
+<p class="rvps2"><span class="rvts39">GRANT EXECUTE ON sys.dbms_system TO &amp;&amp;us; </span></p>
+<p class="rvps2"><span class="rvts39">GRANT EXECUTE ON sys.dbms_xa TO &amp;&amp;us;</span></p>
+<p class="rvps2"><span class="rvts39">GRANT CONNECT, RESOURCE TO &amp;&amp;us WITH ADMIN OPTION;</span></p>
+<p class="rvps2"><span class="rvts39">GRANT CREATE ANY VIEW, CREATE ANY MATERIALIZED VIEW TO &amp;&amp;us;</span></p>
+<p class="rvps2"><span class="rvts39"><br/></span></p>
+<p class="rvps2"><span class="rvts39">/* FOR ORACLE 12C GRANT SOME MORE EXPLICIT PRIVILEGES &nbsp;*/</span></p>
+<p class="rvps2"><span class="rvts39"><br/></span></p>
+<p class="rvps2"><span class="rvts39">GRANT Unlimited tablespace &nbsp;TO &amp;&amp;us;</span></p>
+<p class="rvps2"><span class="rvts39">GRANT CREATE SESSION, CREATE PROCEDURE, CREATE SEQUENCE TO &amp;&amp;us;</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4"><span class="rvts11">Created with the Personal Edition of HelpNDoc: </span><a class="rvts12" href="http://www.helpndoc.com/feature-tour">Easily create CHM Help documents</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2016 by Linh Hong. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

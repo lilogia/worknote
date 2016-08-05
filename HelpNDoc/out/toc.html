@@ -1,0 +1,596 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<title>QuickHelp- Table of Contents</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/silver-theme/jquery-ui-1.8.12.custom.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/dynatree/chm/ui.dynatree.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+    <link type="text/css" rel="stylesheet" media="all" href="css/toc.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#tabs .ui-widget-header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.17.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/jquery.dynatree.min.js"></script>
+	<script type="text/javascript" src="js/hndjsse.js"></script>
+	<script type="text/javascript">
+	
+		window.bSearchDataLoaded = false;
+		var sHelpIdToActivate = '';
+	
+		$(document).ready(function()
+		{
+			var sAnchorName = '';
+			try { sAnchorName = top.location.href.substring(top.location.href.lastIndexOf("#") + 1, top.location.href.length); }
+			catch(err) { sAnchorName = ''; }
+			var nSelectedTab = 0;
+			if (sAnchorName == '_index') nSelectedTab = 1
+			else if (sAnchorName == '_search') nSelectedTab = 2;			
+			$("#tabs").tabs({
+				selected: nSelectedTab,
+				select: function(event, ui) { HideKwPopup(); }
+			});
+			
+			// Toc
+			if ($("#tab-toc").length) {
+				$("#tab-toc").dynatree({
+					clickFolderMode: 1,
+					debugLevel: 0,
+					imagePath: 'css/dynatree/chm/',
+					onActivate: function(node){
+						if ($("#tab-keywords").length && $("#tab-keywords").dynatree && $("#tab-keywords").dynatree("getTree") && $("#tab-keywords").dynatree("getTree").activateKey)
+							$("#tab-keywords").dynatree("getTree").activateKey(null);
+						if(node.data.href && node.data.href != '#'){
+							window.open(node.data.href, node.data.target);
+						}
+					}
+				});
+				// Expand all nodes if required
+				$("#tab-toc").dynatree("getRoot").visit(function(node){
+						node.expand(true);
+					});
+				// Select the active help id
+				if (sHelpIdToActivate != '') $("#tab-toc").dynatree("getTree").activateKey(sHelpIdToActivate);
+			}
+			
+			// Keywords
+			
+			if ($("#tab-keywords").length) {
+				$("#tab-keywords").dynatree({
+					clickFolderMode: 1,
+					debugLevel: 0,
+					imagePath: 'css/dynatree/chm/',
+					onClick: function(node, event){
+						HideKwPopup();
+						if (node.data && node.data.click)
+						{
+							var aRefList = null;
+							eval('aRefList=' + node.data.click);
+							if (ShowKwPopup(node.li, aRefList))
+							{
+								if ($("#tab-toc") && $("#tab-toc").dynatree && $("#tab-toc").dynatree("getTree") && $("#tab-toc").dynatree("getTree").activateKey)
+									$("#tab-toc").dynatree("getTree").activateKey(null);
+								if(node.data.href && node.data.href != '#'){
+									window.open(node.data.href, node.data.target);
+								}
+							}
+						}
+					}
+				});
+				// Expand all nodes if required
+				$("#tab-keywords").dynatree("getRoot").visit(function(node){
+						node.expand(true);
+					});
+				}
+			
+			// Load search data
+			(function() {
+				var se = document.createElement('script'); se.type = 'text/javascript'; se.async = true;
+				se.src = 'js/hndsd.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(se, s);
+			})();
+		});
+		
+		$('body').click(function() {
+			HideKwPopup();
+		});
+		
+		function SelectTocItem(sHelpId)
+		{
+			if ($("#tab-toc").length && $("#tab-toc").dynatree && $("#tab-toc").dynatree("getTree") && $("#tab-toc").dynatree("getTree").getNodeByKey) {
+				$("#tab-toc").dynatree("getTree").getNodeByKey(sHelpId).activateSilently();
+			}
+			else {
+				sHelpIdToActivate = sHelpId;
+			}
+		}
+		
+		function HideKwPopup()
+		{
+			if($("#popupMenu")) $("#popupMenu").remove();
+		}
+		
+		function ShowKwPopup(oSender, aLinks)
+		{
+			HideKwPopup();
+			if (!aLinks || !aLinks.length || aLinks.length == 0) return false
+			else if (aLinks.length == 1) return true
+			else
+			{
+				var oParentDiv = document.createElement("DIV");
+				oParentDiv.id = "popupMenu";
+				var oLink = null;
+				// Close button
+				oLink = document.createElement("SPAN");
+				oLink.className = "close-button";
+				oLink.innerHTML = "X";
+				oLink.href = "#";
+				oLink.onclick = HideKwPopup;
+				oParentDiv.appendChild(oLink);
+				// Items
+				for (var nCnt=0; nCnt<aLinks.length; nCnt++)
+				{
+					oLink = document.createElement("A");
+					oLink.innerHTML = aLinks[nCnt][0];
+					oLink.href = aLinks[nCnt][1];
+					oLink.target = "FrameMain";
+					oLink.onclick = HideKwPopup;
+					oParentDiv.appendChild(oLink);
+				}
+				document.body.appendChild(oParentDiv);
+				var pos = $(oSender).offset(); 
+				var height = $(oSender).height();
+				$(oParentDiv).css({
+					"left": (pos.left+20) + "px",
+					"top": (pos.top + height + 5) + "px"
+				});
+				$(oParentDiv).show();
+				return false;
+			}
+		}
+		
+		function PerformSearch()
+		{
+			if (!window.bSearchDataLoaded) {
+				$("#search_results").html("Search engine data hasn't been fully loaded yet or an error occurred while loading it. This usually happens when documentation is browsed locally.");
+				return;
+			}
+			sValue = $("#search_value").val();
+			$("#search_results").html('Searching...');
+			var oSearchEngine = new HndJsSe;
+			oSearchEngine.ParseInput(sValue);			
+			oSearchEngine.PerformSearch();
+			if (!oSearchEngine.aResults || !oSearchEngine.aResults.length)
+			{
+				$("#search_results").html('No results found.');
+			}
+			else
+			{
+				$("#search_results").html('<div id="search_results_content"></div>');
+				var oUl = $("#search_results_content").append("<ul id='lr'></ul>").find("ul");
+				for (var nCnt = 0; nCnt < oSearchEngine.aResults.length; nCnt++)
+				{
+					if (oSearchEngine.aResults[nCnt][0] < aTl.length)
+					{
+						oUl.append("<li><a href='" + aTl[oSearchEngine.aResults[nCnt][0]][0] + "?search=" + escape(sValue) + "' target='FrameMain'>" + unescape(aTl[oSearchEngine.aResults[nCnt][0]][1]) + "</a></li>");
+					}
+				}
+				// Tree
+				$("#search_results_content").dynatree({
+					clickFolderMode: 1,
+					debugLevel: 0,
+					imagePath: 'css/dynatree/chm/',
+					onActivate: function(node){
+						if ($("#search_results_content") && $("#search_results_content").dynatree && $("#search_results_content").dynatree("getTree") && $("#search_results_content").dynatree("getTree").activateKey)
+							$("#search_results_content").dynatree("getTree").activateKey(null);
+						if(node.data.href && node.data.href != '#'){
+							window.open(node.data.href, node.data.target);
+						}
+					}
+				});
+			}
+		}
+	</script>
+</head>
+
+<body>
+
+	<div id="tabs">
+		<ul>
+			<li><a href="#tab-toc">Contents</a></li>
+			<li><a href="#tab-keywords">Index</a></li>
+			<li><a href="#tab-search">Search</a></li>
+			</ul>
+		<div id="tab-toc">
+			<ul id="toc" class="">
+
+				<li class="" id="Introduction" data="">
+							<a
+							href="Introduction.html"
+							target="FrameMain">
+								Introduction</a>
+
+				</li><li class="folder" id="LinuxunixOS" data="">
+							<a
+							href="LinuxunixOS.html"
+							target="FrameMain">
+								Linux/unix OS</a>
+
+				<ul><li class="" id="wget" data="">
+							<a
+							href="wget.html"
+							target="FrameMain">
+								wget</a>
+
+				</li><li class="" id="Runindaemonmode" data="">
+							<a
+							href="Runindaemonmode.html"
+							target="FrameMain">
+								Run in daemon mode</a>
+
+				</li><li class="" id="AddaNewUser" data="">
+							<a
+							href="AddaNewUser.html"
+							target="FrameMain">
+								Add a New User</a>
+
+				</li><li class="" id="Changeattribute" data="">
+							<a
+							href="Changeattribute.html"
+							target="FrameMain">
+								Change attribute</a>
+
+				</li><li class="" id="ChangeOwnerGroup" data="">
+							<a
+							href="ChangeOwnerGroup.html"
+							target="FrameMain">
+								Change Owner &amp; Group</a>
+
+				</li><li class="" id="UnTarzip" data="">
+							<a
+							href="UnTarzip.html"
+							target="FrameMain">
+								Un Tar/zip</a>
+
+				</li><li class="" id="MountSaigoninfstab" data="">
+							<a
+							href="MountSaigoninfstab.html"
+							target="FrameMain">
+								Mount Saigon in fstab</a>
+
+				</li><li class="" id="Installrpmbycommandline" data="">
+							<a
+							href="Installrpmbycommandline.html"
+							target="FrameMain">
+								Install rpm by command line</a>
+
+				</li><li class="" id="size" data="">
+							<a
+							href="size.html"
+							target="FrameMain">
+								size</a>
+
+				</li><li class="" id="memory" data="">
+							<a
+							href="memory.html"
+							target="FrameMain">
+								memory</a>
+
+				</li><li class="" id="processor" data="">
+							<a
+							href="processor.html"
+							target="FrameMain">
+								processor</a>
+
+				</li><li class="" id="version" data="">
+							<a
+							href="version.html"
+							target="FrameMain">
+								version</a>
+
+				</li><li class="folder" id="Shellscript" data="">
+							<a
+							href="Shellscript.html"
+							target="FrameMain">
+								Shell script</a>
+
+				<ul><li class="" id="Passingargumentstoashellscript" data="">
+							<a
+							href="Passingargumentstoashellscript.html"
+							target="FrameMain">
+								Passing arguments to a shell script</a>
+
+				</li></ul></li><li class="folder" id="Network" data="">
+							<a
+							href="Network.html"
+							target="FrameMain">
+								Network</a>
+
+				<ul><li class="" id="Restartnetworkinterfacebycommand" data="">
+							<a
+							href="Restartnetworkinterfacebycommand.html"
+							target="FrameMain">
+								Restart network interface by command lines</a>
+
+				</li><li class="" id="PermanenthostnamechangeonRedHatb" data="">
+							<a
+							href="PermanenthostnamechangeonRedHatb.html"
+							target="FrameMain">
+								Permanent hostname change on RedHat based systems</a>
+
+				</li><li class="" id="Connectionrules" data="">
+							<a
+							href="Connectionrules.html"
+							target="FrameMain">
+								Connection rules</a>
+
+				</li><li class="" id="FindOutWhichProcessIsListeningUp" data="">
+							<a
+							href="FindOutWhichProcessIsListeningUp.html"
+							target="FrameMain">
+								Find Out Which Process Is Listening Upon a Port</a>
+
+				</li><li class="" id="SetstaticIPaddressonRedhatlinux" data="">
+							<a
+							href="SetstaticIPaddressonRedhatlinux.html"
+							target="FrameMain">
+								Set static IP address on Redhat linux</a>
+
+				</li></ul></li><li class="" id="Sizeoffolderfile" data="">
+							<a
+							href="Sizeoffolderfile.html"
+							target="FrameMain">
+								Size of folder, file</a>
+
+				</li><li class="" id="ssh" data="">
+							<a
+							href="ssh.html"
+							target="FrameMain">
+								ssh</a>
+
+				</li><li class="" id="sudo" data="">
+							<a
+							href="sudo.html"
+							target="FrameMain">
+								sudo</a>
+
+				</li></ul></li><li class="folder" id="Database" data="">
+							<a
+							href="Database.html"
+							target="FrameMain">
+								Database</a>
+
+				<ul><li class="folder" id="Oracle" data="">
+							<a
+							href="Oracle.html"
+							target="FrameMain">
+								Oracle</a>
+
+				<ul><li class="" id="OracleORA01940cannotdropausertha" data="">
+							<a
+							href="OracleORA01940cannotdropausertha.html"
+							target="FrameMain">
+								Oracle - ORA-01940: cannot drop a user that is currently connected</a>
+
+				</li><li class="" id="OracleORA01543tablespaceJUNIT_IW" data="">
+							<a
+							href="OracleORA01543tablespaceJUNIT_IW.html"
+							target="FrameMain">
+								Oracle - ORA-01543: tablespace 'JUNIT_IWFVM00609_USER' already exists</a>
+
+				</li></ul></li><li class="folder" id="PostgreSQL" data="">
+							<a
+							href="PostgreSQL.html"
+							target="FrameMain">
+								PostgreSQL</a>
+
+				<ul><li class="" id="StartstopstatusonLinux" data="">
+							<a
+							href="StartstopstatusonLinux.html"
+							target="FrameMain">
+								Start/stop/status on Linux</a>
+
+				</li></ul></li></ul></li><li class="folder" id="HPeEMSystinet" data="">
+							<a
+							href="HPeEMSystinet.html"
+							target="FrameMain">
+								HPe EM/Systinet</a>
+
+				<ul><li class="" id="SwitchtorootuserwithoutpasswordU" data="">
+							<a
+							href="SwitchtorootuserwithoutpasswordU.html"
+							target="FrameMain">
+								Switch to root user (without password) Use for OVA of Systinet/EM</a>
+
+				</li><li class="" id="CannotinstallonLinux64bitpooliss" data="">
+							<a
+							href="CannotinstallonLinux64bitpooliss.html"
+							target="FrameMain">
+								Cannot install on Linux 64bit - pool issue</a>
+
+				</li><li class="folder" id="Rgifdevice" data="">
+							<a
+							href="Rgifdevice.html"
+							target="FrameMain">
+								Rgif device</a>
+
+				<ul><li class="" id="L7" data="">
+							<a
+							href="L7.html"
+							target="FrameMain">
+								L7</a>
+
+				</li><li class="" id="DataPower" data="">
+							<a
+							href="DataPower.html"
+							target="FrameMain">
+								DataPower</a>
+
+				</li></ul></li><li class="" id="OracleSQLscripttocreateschemabef" data="">
+							<a
+							href="OracleSQLscripttocreateschemabef.html"
+							target="FrameMain">
+								Oracle SQL script to create schema before install EM/Systinet</a>
+
+				</li></ul></li><li class="folder" id="Versioncontrol" data="">
+							<a
+							href="Versioncontrol.html"
+							target="FrameMain">
+								Version control</a>
+
+				<ul><li class="folder" id="SVN" data="">
+							<a
+							href="SVN.html"
+							target="FrameMain">
+								SVN</a>
+
+				<ul><li class="" id="CacheStoreusernamepassword" data="">
+							<a
+							href="CacheStoreusernamepassword.html"
+							target="FrameMain">
+								Cache/Store username/password</a>
+
+				</li></ul></li><li class="folder" id="Git" data="">
+							<a
+							href="Git.html"
+							target="FrameMain">
+								Git</a>
+
+				<ul><li class="" id="branch" data="">
+							<a
+							href="branch.html"
+							target="FrameMain">
+								branch</a>
+
+				</li><li class="" id="cleanreset" data="">
+							<a
+							href="cleanreset.html"
+							target="FrameMain">
+								clean, reset</a>
+
+				</li><li class="" id="global" data="">
+							<a
+							href="global.html"
+							target="FrameMain">
+								global</a>
+
+				</li></ul></li></ul></li><li class="folder" id="FlexFlash" data="">
+							<a
+							href="FlexFlash.html"
+							target="FrameMain">
+								Flex/Flash</a>
+
+				<ul><li class="" id="HowtomakeswfimageforNavigatorofa" data="">
+							<a
+							href="HowtomakeswfimageforNavigatorofa.html"
+							target="FrameMain">
+								How to make swf image for Navigator of artifact icon</a>
+
+				</li></ul></li><li class="folder" id="Twiki" data="">
+							<a
+							href="Twiki.html"
+							target="FrameMain">
+								Twiki</a>
+
+				<ul><li class="" id="TWikiTextFormatting" data="">
+							<a
+							href="TWikiTextFormatting.html"
+							target="FrameMain">
+								TWiki Text Formatting</a>
+
+				</li><li class="folder" id="TWikiIconGraphics" data="">
+							<a
+							href="TWikiIconGraphics.html"
+							target="FrameMain">
+								TWiki Icon Graphics</a>
+
+				<ul><li class="" id="mergemsg" data="">
+							<a
+							href="mergemsg.html"
+							target="FrameMain">
+								merge, msg</a>
+
+				</li></ul></li></ul></li><li class="" id="Skype" data="">
+							<a
+							href="Skype.html"
+							target="FrameMain">
+								Skype</a>
+
+				</li><li class="folder" id="Network1" data="">
+							<a
+							href="Network1.html"
+							target="FrameMain">
+								Network</a>
+
+				<ul><li class="" id="Proxy" data="">
+							<a
+							href="Proxy.html"
+							target="FrameMain">
+								Proxy</a>
+
+				</li><li class="" id="DNS" data="">
+							<a
+							href="DNS.html"
+							target="FrameMain">
+								DNS</a>
+
+				</li></ul></li><li class="folder" id="OVA" data="">
+							<a
+							href="OVA.html"
+							target="FrameMain">
+								OVA</a>
+
+				<ul><li class="" id="vagrant" data="">
+							<a
+							href="vagrant.html"
+							target="FrameMain">
+								vagrant</a>
+
+				</li><li class="" id="vboxmanage" data="">
+							<a
+							href="vboxmanage.html"
+							target="FrameMain">
+								vboxmanage</a>
+
+				</li></ul></li><li class="" id="apache" data="">
+							<a
+							href="apache.html"
+							target="FrameMain">
+								apache</a>
+
+				</li></ul>
+		</div>
+		
+		<div id="tab-keywords">
+			<ul id="keywords">
+
+				</ul>
+		</div>
+		
+		<div id="tab-search">
+			<form onsubmit="PerformSearch(); return false;">
+				<label for="search_value">Search:</label>
+				<input id="search_value" name="search_value"></input>
+				<input type="submit" value="Search"/>
+			</form>
+			<div id="search_results"></div>
+		</div>
+		
+		</div>
+    
+</body>
+
+</html>
+

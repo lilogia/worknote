@@ -1,0 +1,110 @@
+﻿<html>
+	
+<head>
+	<title>wget</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "QuickHelp.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("wget");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">wget</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="LinuxunixOS.html">Linux/unix OS</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="LinuxunixOS.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="LinuxunixOS.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Runindaemonmode.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;">
+<li value="1" class="rvps2"><span class="rvts6">Setting proxy in wget</span></li>
+</ol>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 72px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px" class="rvps5"><span class="rvts16">Way1: edit </span><span class="rvts17">wgetrc</span><span class="rvts16"> file</span></li>
+</ul>
+<p class="rvps5"><span class="rvts18">use_proxy=yes</span></p>
+<p class="rvps5"><span class="rvts18">http_proxy=web-proxy.cup.hp.com:8080</span></p>
+<p class="rvps5"><span class="rvts18"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 72px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px" class="rvps5"><span class="rvts16">Way2: directly in command</span></li>
+</ul>
+<p class="rvps5"><span class="rvts19">wget &nbsp;… &nbsp;-e &nbsp;use_proxy=yes &nbsp;-e &nbsp;http_proxy=web-proxy.cup.hp.com:8080 &nbsp;…</span></p>
+<p class="rvps6"><span class="rvts16"><br/></span></p>
+<p class="rvps6"><span class="rvts16">(More &amp; quick: </span><a class="rvts20" href="http://stackoverflow.com/questions/11211705/setting-proxy-in-wget">http://stackoverflow.com/questions/11211705/setting-proxy-in-wget</a><span class="rvts16"> )</span></p>
+<p class="rvps6"><span class="rvts16"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 72px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px" class="rvps5"><span class="rvts16">Use a proxy on the command line</span></li>
+</ul>
+<p class="rvps5"><span class="rvts19">export http_proxy=”http://[username:password]@ web-proxy.cup.hp.com:8080”</span></p>
+<p class="rvps5"><span class="rvts19">sample:</span></p>
+<p class="rvps5"><span class="rvts19"><br/></span></p>
+<p class="rvps5"><span class="rvts19">export http_proxy="http://proxy.bbn.hp.com:8080"</span></p>
+<p class="rvps5"><span class="rvts19"><br/></span></p>
+<p class="rvps6"><span class="rvts16">(</span><a class="rvts20" href="http://askubuntu.com/questions/47379/how-to-use-a-proxy-on-the-command-line">http://askubuntu.com/questions/47379/how-to-use-a-proxy-on-the-command-line</a><span class="rvts16"> )</span></p>
+<p class="rvps6"><span class="rvts16"><br/></span></p>
+<p></p>
+<p class="rvps4"><span class="rvts11">Created with the Personal Edition of HelpNDoc: </span><a class="rvts12" href="http://www.helpndoc.com/feature-tour/create-ebooks-for-amazon-kindle">Produce Kindle eBooks easily</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2016 by Linh Hong. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+
