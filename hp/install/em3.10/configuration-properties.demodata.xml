@@ -1,0 +1,1257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--
+    #
+    # Edit properties and then run setup -c to finish installation or update
+    # configuration.
+    #
+    -->
+
+    <!--
+    ##############################################################################
+    # Licensing Information
+    #
+    # If you have purchased a license for HP Enterprise Maps, please replace the
+    # license details below.
+    #
+    # Default: trial license (60 days)
+    #
+    -->
+    <property name="license.key.trial" value="true"/>
+    <property name="license.key.file"/>
+    <property name="shared.license.licensed.to" value="Trial License"/>
+    <property name="shared.license.key" value="XUWJE-Q7UKO-2DDUL-1GB5W-PPGWP-B5C0Z-YRE1Y-I05TZ-O48B2"/>
+    <property name="shared.license.chosen.api" value="com.hp.systinet.license.LicenseApiSystinetImpl"/>
+
+    <!--
+    ##############################################################################
+    # Database Configuration
+    #
+
+    # absolute or relative path to DB driver file(s), comma separated in case of
+    # multiple files (REQUIRED)
+    # examples: Oracle... shared.db.driver.path=ojdbc14.jar
+    #           DB2...    shared.db.driver.path=db2jcc.jar,db2jcc_license_cu.jar
+    -->
+    <property name="shared.db.driver.path" value="@db.driver.path@"/>
+
+    <!--
+    # DB type, use one of:
+    # oracle ... for Oracle 10g
+    # mssql  ... for Microsoft SQL Server
+    # db2    ... for IBM DB2
+    -->
+    <property name="shared.db.type" value="oracle"/>
+
+    <!--
+    # The JDBC driver class will be autodetected unless you specify a specific
+    # class here:
+    -->
+    <!-- <property name="shared.db.driver.class" value="oracle.jdbc.OracleDriver"/> -->
+
+    <!-- DB user credentials-->
+    <property name="shared.db.username" value="@db.username@"/>
+    <property name="shared.db.password" value="@db.password@"/>
+
+    <!-- DB connection string-->
+    <property name="shared.db.host" value="@db.host@"/>
+    <property name="shared.db.port" value="1521"/>    
+    <property name="shared.db.dbname" value="@db.dbname@"/>
+
+    <!-- The shared.db.url overrides the connection string components if specified -->
+    <!-- <property name="shared.db.url" value="jdbc:oracle:thin:@localhost:1521:XE"/> -->
+
+    <!--
+    # DB operation, use one of:
+    #   create       ... to create database/tablespace and DB schema
+    #                    (requires DB admin credentials on some databases)
+    #   drop         ... to drop the whole database/tablespace
+    #   createSchema ... to create a DB schema in an existing database/tablespace
+    #                    (drops existing tables prior to creation)
+    #   dropSchema   ... to drop the DB schema
+    #
+    # ATTENTION: the "create" and "drop" operations require the individual
+    #            components of the DB connection string to be specified
+    -->
+    <property name="shared.db.action" value="createSchema"/>
+
+    <!--
+    # When value is 'true' explicit 'commit' commands are not performed within scripts which create or drop database schema.
+    # Value of this property could affect installer, setup tool and reset tool.
+    # Could solve some problems with database drivers which do not allow using 'commit' command in auto-commit mode.
+    -->
+    <property name="shared.installer.db.exclude.commits" value="false"/>
+
+    <!-- DB admin credentials when creating or dropping the whole database/tablespace-->
+    <!--
+    <property name="shared.db.admin.username" value="sa"/>
+    <property name="shared.db.admin.password" value="sa"/>
+    -->
+
+    <!-- tablespace name when creating DB or when creating schema in DB2-->
+    <!-- <property name="shared.db.tablespace" value="myspace"/> -->
+
+    <!-- data file containing the database when creating the DB-->
+    <!-- <property name="shared.db.datafile" value="e:\oradata\platform\myspace1.dbf"/> -->
+
+    <!-- DB2 only, used when creating DB: existing pool name-->
+    <!-- <property name="shared.db.pool" value="bufferpool32"/> -->
+
+    <!--
+    ##############################################################################
+    # Endpoint Properties
+    #
+    # Use the following properties to configure application endpoints:
+    #
+    # shared.hostname, shared.application.context, shared.http.port and shared https.port
+    # Components of the base URL for HTTP access.
+    # - if HTTP access is enabled on the application server, specify
+    # the HTTP port in the shared.http.port property, leave empy if disabled
+    # - if HTTPS access is enabled on the application server, specify
+    # the HTTPS port in the shared.https.port property, leave empy if disabled
+    # shared.https.use
+    # Always render HTTPS URLs
+    #
+    # Example scenarios:
+    #
+    # 1. HTTPS only
+    -->
+    <!--
+    <property name="shared.hostname" value="host"/>
+    <property name="shared.http.port" value=""/>
+    <property name="shared.https.port" value="8443"/>
+    <property name="shared.application.context" value="systinet"/>
+    <property name="shared.https.use" value="false"/>
+    -->
+    <!--
+    #
+    # 2. Both HTTP and HTTPS with enforcing secured URLs
+    -->
+    <!--
+    <property name="shared.hostname" value="@hostname@"/>
+    <property name="shared.http.port" value="@http.port@"/>
+    <property name="shared.https.port" value="@https.port@"/>
+    <property name="shared.application.context" value="@shared.application.context@"/>
+    <property name="shared.https.use" value="true"/>
+    -->
+    <!--
+    #
+    # 3. Proxied installation - HTTPS only (proxy redirects HTTP calls to the HTTPS
+    # endpoint)
+    -->
+    <!--
+    <property name="shared.hostname" value="proxyhost"/>
+    <property name="shared.http.port" value=""/>
+    <property name="shared.https.port" value="@https.port@"/>
+    <property name="shared.application.context" value="@shared.application.context@"/>
+    <property name="shared.https.use" value="false"/>
+    -->
+
+    <property name="shared.hostname" value="@hostname@"/>
+    <property name="shared.http.port" value="@http.port@"/>
+    <property name="shared.https.port" value="@https.port@"/>
+    <property name="shared.application.context" value="@shared.application.context@"/>
+    <property name="shared.doc.context" value="hp-em-doc"/>
+    <property name="shared.https.use" value="false"/>
+
+	<!-- This property enable users access EM server by both host name(s) or IP(s) -->
+	<property name="shared.hostname.enablemultihost" value="true"/>
+
+    <!--
+    # This property configures how the HTML links to XML/RSS/Atom representations
+    # of resources will be generated. Set to 'true' to generate URLs that require
+    # authentication or 'false' to generate URLs that are anonymously available
+    # (unless the authentication is forced by a deployment specific interceptor).
+    -->
+    <property name="shared.ui.link.authentication" value="true"/>
+    <!--
+    # Systinet by default checks that the request comes from a configured URL 
+    # when the login page is accessed. If it is not, if performs an HTTP 
+    # redirect to the configured URL. This redirect can cause an infinite loop 
+    # of redirects in deployments that are accessed through a proxy. Set this 
+    # property to "true" to disable checking of request URL during login and 
+    # thus skip login redirects.
+    -->
+    <property name="shared.ui.skipLoginRedirect" value="false"/>
+
+    <!--
+    ##############################################################################
+    # User Management
+    #
+    # Define the user store used by the application to load user details.
+    #
+    # ATTENTION: SOA Systinet does not perform authentication by default.
+    # The authentication is delegated to the application server which may
+    # require additional setup before or during the deployment of the SOA
+    # Systinet EAR file.
+    #
+    # For details, see the relevant documentation for your application server.
+
+    # Use "ldap" for LDAP integration or keep "database" if no user store is
+    # available.
+    -->
+    <property name="shared.um.account.backend.type" value="database"/>
+    <property name="shared.um.group.backend.type" value="database"/>
+
+    <!-- For LDAP integration also comment out following two properties-->
+    <!--
+    <property name="shared.um.account.backend.enableMoreBackends" value="true"/>
+    <property name="shared.um.group.backend.enableMoreBackends" value="true"/>
+    -->
+
+    <!--
+    # LDAP case sensitivity setting
+    #
+    # Use true for Active Directory or SunONE, contact your LDAP administrator
+    # otherwise.
+    -->
+    <property name="shared.um.account.caseInsensitiveLoginName" value="true"/>
+
+
+	<!-- The value of property shared.um.ldap.connect.timeout 
+		is mapped to com.sun.jndi.ldap.connect.timeout property.
+
+    	The value of this property is the string representation of an integer 
+    	representing the connection timeout in milliseconds. If the LDAP provider 
+    	cannot establish a connection within that period, it aborts the connection attempt. 
+    	The integer should be greater than zero. An integer less than or equal to zero means 
+    	to use the network protocol's (i.e., TCP's) timeout value. -->
+    <property name="shared.um.ldap.connect.timeout" value="0"/>
+
+
+    <!-- LDAP Properties mapping-->
+    <property name="shared.um.account.ldapLoginName" value="uid"/>
+    <property name="shared.um.account.ldapFullName" value="cn"/>
+    <property name="shared.um.account.ldapEmail" value="mail"/>
+    <property name="shared.um.account.ldapDescription" value="description"/>
+
+    <property name="shared.um.group.ldapName" value="cn"/>
+    <property name="shared.um.group.ldapMember" value="uniqueMember"/>
+    <property name="shared.um.group.ldapOwner" value="creatorsName"/>
+    <property name="shared.um.group.ldapDescription" value="description"/>
+    <property name="shared.um.scenarios.type" value="single.ldap.single.searchbase"/>
+
+    <!-- LDAP configuration example -->
+    <!-- Note: Do not forget to escape comma characters! -->
+    <!--
+    <property name="shared.um.java.naming.provider.url" value="ldap://ldap.example.com:389"/>
+    <property name="shared.um.java.naming.factory.initial" value="com.sun.jndi.ldap.LdapCtxFactory"/>
+    <property name="shared.um.java.naming.security.principal" value="uid=boss,dc=example,dc=com"/>
+    <property name="shared.um.java.naming.security.credentials" value="changeit"/>
+    <property name="shared.um.java.naming.security.authentication" value="simple"/>
+    <property name="shared.um.uddi.ldap.searchfilter.user" value="(objectClass=person)"/>
+    <property name="shared.um.uddi.ldap.searchbase.user" value="ou=people,ou=big,dc=example,dc=com"/>
+    <property name="shared.um.uddi.ldap.searchMaxResults.user" value="1000000"/>
+    -->
+    <!--
+    # These properties sets search scope for users and group entries within an LDAP
+    # 0 = object scope (useless in this case)
+    # 1 = one level (flat) scope
+    # 2 = subtree scope
+    -->
+    <!--
+    <property name="shared.um.uddi.ldap.searchscope.user" value="2"/>
+    <property name="shared.um.uddi.ldap.searchscope.group" value="2"/>
+    -->
+    <!--
+    <property name="shared.um.uddi.ldap.searchfilter.group" value="(objectClass=groupofuniquenames)"/>
+    <property name="shared.um.uddi.ldap.searchbase.group" value="ou=groups,ou=big,dc=example,dc=com"/>
+    <property name="shared.um.uddi.ldap.searchMaxResults.group" value="1000000"/>
+    -->
+
+    <!--
+    # System administrator settings follow (REQUIRED)
+
+    # Identifies a user defined in the external user store who will be granted
+    # the administrator's priviledges.
+    #
+    # ATTENTION: when installing SOA Systinet into a local JBoss server
+    # configured to authenticate users against the users.properties file
+    # the admin user with a password specified below will be created in
+    # JBoss's users.properties unless the users.properties file already
+    # exists.
+    # Note such a configuration of JBoss is not suitable for the production
+    # enviromnent.
+    -->
+    <property name="shared.administrator.username" value="admin"/>
+
+    <!--
+    # This property will be IGNORED UNLESS you install SOA Systinet into
+    # a local JBoss server configured to authenticate users against the
+    # users.properties file.
+    -->
+    <property name="shared.administrator.password" value="changeit"/>
+
+    <!--
+    # The system e-mail address is used as the sender address for e-mail notifications
+    # generated by Systinet. HP Software recommend setting-up a generic e-mail address
+    # (e.g. soa-repository@company.com) and redirecting it to the real administrator
+    # of your Systinet installation.
+    -->
+    <property name="shared.notification.default.mail.from" value="@mail@"/>
+
+    <!-- E-mail address of the administrator user-->
+    <property name="shared.administrator.mail" value="@mail@"/>
+
+    <!--
+    # Settings for the new UI default users.
+    # (JBoss installation only)
+    -->
+<!--	
+    <property name="install.demouser.provider.name" value="provider"/>
+    <property name="install.demouser.provider.password" value="changeit"/>
+    <property name="install.demouser.stmintegrator.name" value="stmintegrator"/>
+    <property name="install.demouser.stmintegrator.password" value="changeit"/>
+    <property name="install.demouser.soapeintegrator.name" value="soapeintegrator"/>
+    <property name="install.demouser.soapeintegrator.password" value="changeit"/>
+    <property name="install.demouser.analyst.name" value="analyst"/>
+    <property name="install.demouser.analyst.password" value="changeit"/>
+    <property name="install.demouser.partner.name" value="partner"/>
+    <property name="install.demouser.partner.password" value="changeit"/>
+    <property name="install.demouser.rdoe.name" value="rdoe"/>
+    <property name="install.demouser.rdoe.password" value="changeit"/>
+    <property name="install.demouser.jOperationEngineer.name" value="jOperationEngineer"/>
+    <property name="install.demouser.jOperationEngineer.password" value="changeit"/>
+    <property name="install.demouser.jImplementationManager.name" value="jImplementationManager"/>
+    <property name="install.demouser.jImplementationManager.password" value="changeit"/>
+    <property name="install.demouser.jDeveloper.name" value="jDeveloper"/>
+    <property name="install.demouser.jDeveloper.password" value="changeit"/>
+    <property name="install.demouser.jOperationEngineer.name" value="jOperationEngineer"/>
+    <property name="install.demouser.jOperationEngineer.password" value="changeit"/>
+    <property name="install.demouser.jImplementationManager.name" value="jImplementationManager"/>
+    <property name="install.demouser.jImplementationManager.password" value="changeit"/>
+    <property name="install.demouser.jProjectSponsor.name" value="jProjectSponsor"/>
+    <property name="install.demouser.jProjectSponsor.password" value="changeit"/>
+    <property name="install.demouser.jProjectManager.name" value="jProjectManager"/>
+    <property name="install.demouser.jProjectManager.password" value="changeit"/>
+    <property name="install.demouser.jApplicationProvider.name" value="jApplicationProvider"/>
+    <property name="install.demouser.jApplicationProvider.password" value="changeit"/>
+    <property name="install.demouser.jServiceProvider.name" value="jServiceProvider"/>
+    <property name="install.demouser.jServiceProvider.password" value="changeit"/>
+    <property name="install.demouser.jProcessProvider.name" value="jProcessProvider"/>
+    <property name="install.demouser.jProcessProvider.password" value="changeit"/>
+    <property name="install.demouser.jSOACenterArchitect.name" value="jSOACenterArchitect"/>
+    <property name="install.demouser.jSOACenterArchitect.password" value="changeit"/>
+    <property name="install.demouser.jArchitect.name" value="jArchitect"/>
+    <property name="install.demouser.jArchitect.password" value="changeit"/>
+    <property name="install.demouser.jQAEngineer.name" value="jQAEngineer"/>
+    <property name="install.demouser.jQAEngineer.password" value="changeit"/>
+    <property name="install.demouser.pDeveloper.name" value="pDeveloper"/>
+    <property name="install.demouser.pDeveloper.password" value="changeit"/>
+    <property name="install.demouser.pOperationEngineer.name" value="pOperationEngineer"/>
+    <property name="install.demouser.pOperationEngineer.password" value="changeit"/>
+    <property name="install.demouser.pImplementationManager.name" value="pImplementationManager"/>
+    <property name="install.demouser.pImplementationManager.password" value="changeit"/>
+    <property name="install.demouser.pDeveloper.name" value="pDeveloper"/>
+    <property name="install.demouser.pDeveloper.password" value="changeit"/>
+    <property name="install.demouser.pOperationEngineer.name" value="pOperationEngineer"/>
+    <property name="install.demouser.pOperationEngineer.password" value="changeit"/>
+    <property name="install.demouser.pImplementationManager.name" value="pImplementationManager"/>
+    <property name="install.demouser.pImplementationManager.password" value="changeit"/>
+    <property name="install.demouser.pProjectSponsor.name" value="pProjectSponsor"/>
+    <property name="install.demouser.pProjectSponsor.password" value="changeit"/>
+    <property name="install.demouser.pProjectManager.name" value="pProjectManager"/>
+    <property name="install.demouser.pProjectManager.password" value="changeit"/>
+    <property name="install.demouser.pApplicationProvider.name" value="pApplicationProvider"/>
+    <property name="install.demouser.pApplicationProvider.password" value="changeit"/>
+    <property name="install.demouser.pServiceProvider.name" value="pServiceProvider"/>
+    <property name="install.demouser.pServiceProvider.password" value="changeit"/>
+    <property name="install.demouser.pProcessProvider.name" value="pProcessProvider"/>
+    <property name="install.demouser.pProcessProvider.password" value="changeit"/>
+    <property name="install.demouser.pSOACenterArchitect.name" value="pSOACenterArchitect"/>
+    <property name="install.demouser.pSOACenterArchitect.password" value="changeit"/>
+    <property name="install.demouser.pArchitect.name" value="pArchitect"/>
+    <property name="install.demouser.pArchitect.password" value="changeit"/>
+    <property name="install.demouser.pQAEngineer.name" value="pQAEngineer"/>
+    <property name="install.demouser.pQAEngineer.password" value="changeit"/>
+-->	
+    <property name="install.demouser.susan.name" value="susan"/>
+    <property name="install.demouser.susan.password" value="changeit"/>
+    <property name="install.demouser.david.name" value="david"/>
+    <property name="install.demouser.david.password" value="changeit"/>
+
+
+    <!--
+    # Settings for the automatic creation of users used in the product demos.
+    # (JBoss installation only)
+    -->
+    <property name="install.allow.creation.demousers" value="true"/>
+    <property name="install.demouser.default.name" value="demouser"/>
+    <property name="install.demouser.default.password" value="changeit"/>
+    <property name="install.demouser.approver.name" value="demoapprover"/>
+    <property name="install.demouser.approver.password" value="changeit"/>
+
+    <!--
+    ##############################################################################
+    # Application Server Configuration
+    #
+    # AS type, use one of:
+    # jboss ... for JBoss 5.1.0 or JBoss EAP 5.0.0 (see also shared.as.server.version)
+    -->
+    <property name="shared.as.server" value="hpjboss"/>
+
+    <!--
+    # use "510" for JBoss 5.1.0 and JBoss EAP 5.0.0
+    # use "7" for JBoss 7
+    # use "6E" for embedded JBOSS EAP
+    # or leave empty/undefined for other appservers
+    -->
+    <property name="shared.as.server.version" value="6E"/>
+
+    <!--
+    # JBOSS deployment; irrelevant for other appservers
+    # Do not forget to escape backslash characters in the location
+    -->
+    <property name="shared.as.jboss.configuration" value="standalone-full"/>    
+    <property name="shared.as.jboss.location" value="@jboss.location@"/>
+
+    <!--
+    # The username and password for access to the JMX. These properties are equired for all deployments
+    # to JBoss with secure (authenticated) JMX console.
+    # These properties are NOT propageted jmx-console-users.properties in JBoss!
+    -->
+    <property name="shared.as.jboss.jmx.admin.username" value="admin"/>
+    <property name="shared.as.jboss.jmx.admin.password" value="admin"/>
+
+    <!--
+      # Turn on/off preloading classes at startup see http://www.jboss.org/community/wiki/ClassPreloadService
+      # it prevents ClassCircularityError on some operation systems as HP-UX .
+    -->
+    <property name="shared.as.jboss.preloading.classes.at.startup" value="false"/>
+    
+    <!--
+     # Turn on/off non clustered SingleSignOn service in JBoss. For details about
+     # SSO in JBoss see http://www.jboss.org/community/wiki/JBossWebSingleSignOn
+     -->
+    <property name="shared.as.jboss.noncluster.sso" value="true"/>
+
+    <!--
+     # Turn on/off exploded deployment of Systinet ear. Exploded 
+     # deployment improves startup time of Systinet on JBOSS, especially 
+     # on Windows.
+    -->
+    <property name="shared.as.jboss.deploy.exploded" value="true"/>
+
+    <!--
+     # Uncomment the following property to let installer generate 
+     # bin/serverstart.sh (or bin\serverstart.bat) with java remote debugging 
+     # turned on (transport=dt_socket,address=8787,server=y,suspend=n).
+     # Performed by 'Application Server Configuration' setup step.
+    -->
+    <!--
+    <property name="install.jboss7.serverstart.debug" value="true"/>
+    -->
+
+    <!-- 
+    # Controls whether to setup JBOSS in development mode, so that JSPs are automatically 
+    # recompiled upon change. Valid values are true/false, any other value means 'false'.
+    # Performed by 'Application Server Configuration' setup step.
+    --> 
+    <property name="install.jboss7.web.development" value="false"/>
+
+    <!-- 
+    # Controls whether to setup native APR in JBOSS web. Valid values
+    # are true/false, any other value will left the web module without changes.
+    # Performed by 'Application Server Configuration' setup step.
+    --> 
+    <property name="install.jboss7.web.native" value="false"/>
+    
+    <!-- 
+    # Controls whether or not to deploy JBoss's welcome-content application 
+    # at root context. Performed by 'Application Server Configuration' setup step. 
+    --> 
+    <property name="install.jboss7.web.enable-welcome-root" value="false"/>
+
+    <!-- 
+    # Configures JBOSS http/https port numbers when set to true.
+    # Values of shared.http.port and shared.https.port properties are used. 
+    # Performed by 'Application Server Configuration' setup step.
+    --> 
+    <property name="install.jboss7.web.configureHttpPorts" value="true"/>
+
+    <!-- 
+    # Set 'install.jboss7.apacheProxy.setup' to true in order to setup JBOSS 
+    # with an Apache proxy. A change is then performed by 'Application Server 
+    # Configuration' setup step. The following options are used in order to 
+    # specify details:
+    #
+    # install.jboss7.web.instance-id          instance-id of the JBOSS node
+    # install.jboss7.web.ajp.install          install AJP connector to JBOSS web?
+    # install.jboss7.modcluster.balancer      the name of the balancer, as it 
+    #                                         appears in httpd's ManagerBalancerName
+    # install.jboss7.modcluster.advertise     true to use the UDP advertising 
+    #                                         mechanism to setup Apache proxy
+    # install.jboss7.modcluster.proxy-list    a comma delimited list of httpd 
+    #                                         proxies with which the node will 
+    #                                         initially communicate, proxy value  
+    #                                         should be of from address:port
+    # install.jboss7.modcluster.connector     a name of JBOSS web connector used 
+    #                                         with httpd proxy, required since 
+    #                                         JBOSS7.2 mod_cluster configuration
+    #                                         (urn:jboss:domain:modcluster:1.1) 
+    -->
+    <property name="install.jboss7.apacheProxy.setup" value="false"/>
+    <property name="install.jboss7.web.instance-id" value="node1"/>
+    <property name="install.jboss7.web.ajp.install" value="true"/>
+    <property name="install.jboss7.modcluster.balancer" value="mycluster"/>
+    <property name="install.jboss7.modcluster.advertise" value="false"/>
+    <property name="install.jboss7.modcluster.proxy-list" value="127.0.0.1:80"/>
+    <property name="install.jboss7.modcluster.connector" value="ajp"/>
+
+    <!--
+    ##############################################################################
+    # Password Encryption feature
+    #
+    # When enabled, all passwords stored on filesystem and in the database
+    # (database passwords, SMTP account password and others) will be encrypted by
+    # a key derived from the master passphrase entered during installation as
+    # a - -passphrase <pass> installer argument.
+    #
+    # The same passphrase must be then used to run setup and command-line tools.
+    -->
+    <property name="password.encryption.enabled" value="false"/>
+
+    <!--
+    ##############################################################################
+    # Data Import
+    #
+    # For custom data import, specify import.path to the
+    # directory containing an image created by the export tool:
+    #
+    -->
+    <!-- <property name="import.path" value="C:\data\myImg"/> -->
+
+
+    <!--
+    ##############################################################################
+    # SMTP configuration
+    #
+    # Notes:
+    # - this configuration applies only in the case of installing SOA Systinet
+    # to the local JBoss installation
+    # - the shared.notification.default.mail.from property set in the user
+    # management section above is used as a default sender address for sending
+    # system notifications
+    -->
+    <property name="shared.smtp.host" value="mail.hp.com"/>
+    <property name="shared.smtp.port" value="25"/>
+    <property name="shared.smtp.auth" value="false"/>
+    <property name="shared.smtp.auth.password"/>
+    <property name="shared.smtp.auth.username"/>
+
+    <!--
+    ##############################################################################
+    # Self Test
+    #
+    # self-test, set to false to disable the publicly available diagnostic tool at
+    # http://<hostname>:<port>/<context>/self-test/
+    #
+    # You may want to disable this feature in a production deployment
+    #
+    -->
+    <property name="shared.selfTest.enabled" value="true"/>
+
+
+    <!--
+    ##############################################################################
+    #
+    # Advanced Settings
+    #
+    ##############################################################################
+    #
+    # Your HP Enterprise Maps installation should be fully operational after you have
+    # edited the configuration properties above.
+    #
+    # The rest of this file contains only advanced or internal configuration
+    # properties and you may skip it unless you have a very good reason to amend
+    # them.
+    #
+    ##############################################################################
+    -->
+
+    <!--
+    #
+    # database configuration
+    #
+    -->
+    <property name="shared.db.fulltextsearch.appendpercentage" value="true"/>
+    <property name="shared.db.fulltextsearch.prefixpercentage" value="false"/>
+    <property name="shared.db.fulltextsearch" value="false"/>
+
+    <!-- todo: remove from context from configuration module-->
+    <property name="platform.rdbm.type" value="${shared.db.type}"/>
+
+    <property name="platform.rdbm.fulltextsearch.appendpercentage" value="${shared.db.fulltextsearch.appendpercentage}"/>
+    <property name="platform.rdbm.fulltextsearch" value="${shared.db.fulltextsearch}"/>
+
+    <!--
+    #  Minimal version of database and driver for each supported vendor.
+    #  The version has to match the ^\\d+(\\.\\d+)*$ regexp.
+    #  It is not recommended to change their values.
+    -->
+    <property name="shared.db.min.version.oracle" value="10.2"/>
+    <property name="shared.db.driver.min.version.oracle" value="10.2.0.4"/>
+    <property name="shared.db.allowed.encoding.oracle" value="UTF8\,UTF16"/>
+
+    <property name="shared.db.min.version.mssql" value="9.00"/>
+    <property name="shared.db.driver.min.version.mssql" value="1.2"/>
+
+    <property name="shared.db.min.version.db2" value="9.1"/>
+    <property name="shared.db.driver.min.version.db2" value="3.2"/>
+
+    <!--
+    #
+    # DQL configuration
+    #
+    -->
+    <property name="shared.dql.security.allowNoAcl" value="false"/>
+    <property name="shared.dql.security.allowNative" value="true"/>
+
+    <!--
+    #
+    # administrator settings
+    #
+    -->
+    <property name="shared.administrator.groups" value="hp#administrators"/>
+    <property name="shared.administrator.users" value="${shared.administrator.username}"/>
+
+
+    <!--
+    #
+    # server configuration
+    #
+    -->
+
+    <!-- http fine-tuning-->
+    <property name="shared.http.connections.per.host" value="30"/>
+    <property name="shared.http.total.connections" value="100"/>
+    <property name="shared.http.user.agent.identification" value="HTTPClient/?.?"/>
+
+    <!--
+    # do not edit; generated from shared.hostname, shared.http(s).port and
+    # shared.application.context
+    -->
+    <property name="shared.http.urlbase" value="@http.urlbase@"/>
+    <property name="shared.https.urlbase" value="@https.urlbase@"/>
+    <property name="shared.urlbases" value="@urlbases@"/>
+
+    <!--
+    #
+    # application server configuration
+    #
+    -->
+    <property name="as.doc.link.weblogic" value="doc:html/install.setup.html#wl.setup"/>
+    <property name="as.doc.link.websphere" value="doc:html/install.setup.html#ws.setup"/>
+
+    <!--
+    #
+    # Siteminder
+    #
+    # Set the shared.siteminder.enabled=true to turn on Siteminder (HTTP Header) authenticaion.
+    # Choose whether to use either HTTP header or cookie to pass the login name and set the
+    # header/cookie name as the shared.siteminder.loginNameField property.
+    #
+    -->
+    <property name="shared.siteminder.enabled" value="false"/>
+    <property name="shared.siteminder.useCookie" value="false"/>
+    <property name="shared.siteminder.useHeader" value="true"/>
+    <property name="shared.siteminder.loginNameField" value="sm-userdn"/>
+
+    <!--
+    #
+    # enable/disable user name validation. Validates that a user name is present in the security context.
+    #
+    -->
+    <property name="shared.usernameValidation.enabled" value="true"/>
+
+    <!--
+    #
+    # Setup tool won't allow you to import data or apply extensions while there is a server
+    # running to protect the data consistency. In some environments (behind the loadbalancer
+    # proxy or using the Siteminder) there is always something running at the server endpoint.
+    #
+    # Set this property to true to skip the test to be able to apply extensions in such
+    # environments. Make sure there is no application server running at the node you are
+    # working at!
+    #
+    -->
+    <property name="install.ignore.running.platform" value="false"/>
+
+    <!--
+    #
+    # False by default, it forces the data from extensions to overwrite runtime data every time
+    # the extensions are applied. The default behavior is useful in cases where extensions
+    # customize data set by another (even the core) extension.
+    #
+    # Set to true to prioritize runtime data over the values in extensions. This way values
+    # initialized from extensions edited during runtime (i.e. using the taxonomy editor) will
+    # survive extension application. On the other hand, no extension is able to override
+    # existing data and data imported by some other extension up in the dependency tree.
+    #
+    -->
+    <property name="install.conservative.extension.import" value="false"/>
+
+    <!-- remove following when pl-repository-old MailHelper will not use them any more-->
+    <property name="platform.smtp.host" value="${shared.smtp.host}"/>
+    <property name="platform.smtp.port" value="${shared.smtp.port}"/>
+    <property name="platform.smtp.auth" value="${shared.smtp.auth}"/>
+    <property name="platform.smtp.auth.password" value="${shared.smtp.auth.password}"/>
+    <property name="platform.smtp.auth.user" value="${shared.smtp.auth.username}"/>
+
+    <!--
+    #
+    # service catalog options
+    #
+    # use "composite" to enable, "skipped" to disable verification of certificates
+    # on initiated HTTPS connections:
+    -->
+    <property name="platform.certVerification" value="skipped"/>
+
+    <!-- GUI-->
+    <property name="platform.web.path" value="/systinet/platform"/>
+
+    <property name="platform.webui.max.upload.size" value="-1"/>
+    <property name="platform.webui.server.session.timeout" value="1800"/>
+    <property name="platform.webui.uploadcleaner.run.time" value="03:00"/>
+    <property name="platform.webui.uploadcleaner.run.recurrence" value="1440"/>
+    <property name="platform.webui.uploadcleaner.run.threshold" value="60"/>
+
+    <!-- locale for GUI-->
+    <property name="shared.default.locale" value="en_US"/>
+
+    <!-- locale for GUI - JSP generator-->
+    <property name="platform.default.locale" value="${shared.default.locale}"/>
+
+    <!--
+    #
+    # UI Preferences
+    #
+    -->
+    <user id="server$serverPreferences">
+        <property name="platform.ui.preferences.newButtonEnable" value="true"/>
+        <property name="platform.ui.preferences.languages" ref="data/ui.languages.xml" type="xml"/>
+    </user>
+
+    <property name="platform.ui.account.defaultLanguage" value="en"/>
+    <property name="platform.ui.uddi.uddiv2maxrows" value="50"/>
+   
+    <property name="platform.ui.customization.release.20100408000000" ref="data/platform.ui.customization.release.20100408000000.xml" type="xml"/>
+
+    <!-- server timezone (empty)-->
+    <property name="shared.current.timezone"/>
+
+    <!-- default Contract Management configuration-->
+    <property name="platform.cm.providers" value="applicationComponentArtifact\,businessServiceArtifact\,applicationInterfaceArtifact\,endpointArtifact\,hpsoaOperationArtifact\,businessProcessArtifact\,businessProcessArtifact"/>
+    <property name="platform.cm.consumers" value="contactArtifact\,applicationComponentArtifact\,applicationInterfaceArtifact\,businessServiceArtifact"/>
+
+    <property name="shared.reporting.identity.id" value="platform"/>
+
+    <!-- TODO: remove from code, verify and remove from here-->
+    <property name="platform.hostname" value="${shared.hostname}"/>
+    <property name="platform.http.port" value="${shared.http.port}"/>
+    <property name="platform.https.port" value="${shared.https.port}"/>
+
+    <property name="platform.https.use" value="${shared.https.use}"/>
+    <property name="platform.http.urlbase" value="${shared.http.urlbase}"/>
+    <property name="platform.https.urlbase" value="${shared.https.urlbase}"/>
+
+
+    <!-- setup configuration and state - do not edit-->
+    <property name="shared.ear.name" value="hp-soa-systinet.ear"/>
+    <property name="platform.war.name" value="ui-web-war.war"/>
+    <property name="reporting.war.name" value="rs-rest-war.war"/>
+    <property name="policymgr.war.name" value="pm-rest-war.war"/>
+    <property name="install.location"/>
+
+    <property name="shared.core.extension.name" value="com.hp.soa.systinet.ext.core"/>
+
+    <!-- property classes of the configuration export/import tool -->
+    <property name="shared.conf.exportImport.classes.application" ref="data/shared.conf.exportImport.classes.application.txt" type="txt"/>
+    <property name="shared.conf.exportImport.classes.distribution" ref="data/shared.conf.exportImport.classes.distribution.txt" type="txt"/>
+    <property name="shared.conf.exportImport.classes.security" ref="data/shared.conf.exportImport.classes.security.txt" type="txt"/>
+    <property name="shared.conf.exportImport.classes.license" ref="data/shared.conf.exportImport.classes.license.txt" type="txt"/>
+	<property name="platform.ui.preferences.catalogBrowser.hpsoaPolicyReports" ref="data/platform.ui.preferences.catalogBrowser.hpsoaPolicyReports.xml" type="xml"/>
+	
+
+    <!--
+    #
+    # service catalog autodetected content types
+    #
+    -->
+    <property name="platform.contenttypes.mpp" value="application/vnd.ms-project"/>
+    <property name="platform.contenttypes.mpg" value="video/mpeg"/>
+    <property name="platform.contenttypes.mpe" value="video/mpeg"/>
+    <property name="platform.contenttypes.scd" value="application/x-msschedule"/>
+    <property name="platform.contenttypes.tif" value="image/tiff"/>
+    <property name="platform.contenttypes.mpc" value="application/vnd.ms-project"/>
+    <property name="platform.contenttypes.dwg" value="image/vnd.dwg"/>
+    <property name="platform.contenttypes.mpa" value="video/mpeg"/>
+    <property name="platform.contenttypes.eps" value="application/postscript"/>
+    <property name="platform.contenttypes.mov" value="video/quicktime"/>
+    <property name="platform.contenttypes.cpp" value="text/plain"/>
+    <property name="platform.contenttypes.ico" value="image/x-icon"/>
+    <property name="platform.contenttypes.pub" value="application/x-mspublisher"/>
+    <property name="platform.contenttypes.wav" value="audio/x-wav"/>
+    <property name="platform.contenttypes.rtx" value="text/richtext"/>
+    <property name="platform.contenttypes.dvi" value="application/x-dvi"/>
+    <property name="platform.contenttypes.snd" value="audio/basic"/>
+    <property name="platform.contenttypes.tgz" value="application/x-compressed"/>
+    <property name="platform.contenttypes.texinfo" value="application/x-texinfo"/>
+    <property name="platform.contenttypes.rtf" value="application/rtf"/>
+    <property name="platform.contenttypes.mp3" value="audio/mpeg"/>
+    <property name="platform.contenttypes.latex" value="application/x-latex"/>
+    <property name="platform.contenttypes.mp2" value="video/mpeg"/>
+    <property name="platform.contenttypes.xsl" value="application/xml"/>
+    <property name="platform.contenttypes.tsv" value="text/tab-separated-values"/>
+    <property name="platform.contenttypes.wmf" value="application/x-msmetafile"/>
+    <property name="platform.contenttypes.xsd" value="application/xml"/>
+    <property name="platform.contenttypes.pgm" value="image/x-portable-graymap"/>
+    <property name="platform.contenttypes.gtar" value="application/x-gtar"/>
+    <property name="platform.contenttypes.htm" value="text/html"/>
+    <property name="platform.contenttypes.pfx" value="application/x-pkcs12"/>
+    <property name="platform.contenttypes.mpeg" value="video/mpeg"/>
+    <property name="platform.contenttypes.tiff" value="image/tiff"/>
+    <property name="platform.contenttypes.js" value="text/javascript"/>
+    <property name="platform.contenttypes.dtd" value="application/xml-dtd"/>
+    <property name="platform.contenttypes.xqy" value="application/xquery"/>
+    <property name="platform.contenttypes.xq" value="application/xquery"/>
+    <property name="platform.contenttypes.xquery" value="application/xquery"/>
+    <property name="platform.contenttypes.tex" value="application/x-tex"/>
+    <property name="platform.contenttypes.wks" value="application/vnd.ms-works"/>
+    <property name="platform.contenttypes.config" value="text/plain"/>
+    <property name="platform.contenttypes.xql" value="text/plain"/>
+    <property name="platform.contenttypes.swf" value="application/x-shockwave-flash"/>
+    <property name="platform.contenttypes.xpm" value="image/x-xpixmap"/>
+    <property name="platform.contenttypes.ppz" value="application/vnd.ms-powerpoint"/>
+    <property name="platform.contenttypes.exe" value="application/octet-stream"/>
+    <property name="platform.contenttypes.ppt" value="application/vnd.ms-powerpoint"/>
+    <property name="platform.contenttypes.pps" value="application/vnd.ms-powerpoint"/>
+    <property name="platform.contenttypes.z" value="application/x-compress"/>
+    <property name="platform.contenttypes.pdf" value="application/pdf"/>
+    <property name="platform.contenttypes.ppm" value="image/x-portable-pixmap"/>
+    <property name="platform.contenttypes.svg" value="image/svg+xml"/>
+    <property name="platform.contenttypes.html" value="text/html"/>
+    <property name="platform.contenttypes.xhtm" value="application/xhtml+xml"/>
+    <property name="platform.contenttypes.vcf" value="text/x-vcard"/>
+    <property name="platform.contenttypes.tcl" value="application/x-tcl"/>
+    <property name="platform.contenttypes.gz" value="application/x-gzip"/>
+    <property name="platform.contenttypes.h" value="text/plain"/>
+    <property name="platform.contenttypes.c" value="text/plain"/>
+    <property name="platform.contenttypes.xslt" value="application/xml"/>
+    <property name="platform.contenttypes.xbm" value="image/x-xbitmap"/>
+    <property name="platform.contenttypes.vrml" value="x-world/x-vrml"/>
+    <property name="platform.contenttypes.pot" value="application/vnd.ms-powerpoint"/>
+    <property name="platform.contenttypes.jpg" value="image/jpeg"/>
+    <property name="platform.contenttypes.jpe" value="image/jpeg"/>
+    <property name="platform.contenttypes.wsil" value="application/xml"/>
+    <property name="platform.contenttypes.sh" value="text/plain"/>
+    <property name="platform.contenttypes.mid" value="audio/mid"/>
+    <property name="platform.contenttypes.pbm" value="image/x-portable-bitmap"/>
+    <property name="platform.contenttypes.jpeg" value="image/jpeg"/>
+    <property name="platform.contenttypes.stm" value="text/html"/>
+    <property name="platform.contenttypes.stl" value="application/vnd.ms-pkistl"/>
+    <property name="platform.contenttypes.pnm" value="image/x-portable-anymap"/>
+    <property name="platform.contenttypes.avi" value="video/x-msvideo"/>
+    <property name="platform.contenttypes.tar" value="application/x-tar"/>
+    <property name="platform.contenttypes.gif" value="image/gif"/>
+    <property name="platform.contenttypes.xml" value="text/xml"/>
+    <property name="platform.contenttypes.dot" value="application/msword"/>
+    <property name="platform.contenttypes.png" value="image/x-png"/>
+    <property name="platform.contenttypes.ra" value="audio/x-pn-realaudio"/>
+    <property name="platform.contenttypes.ram" value="audio/x-pn-realaudio"/>
+    <property name="platform.contenttypes.xhtml" value="application/xhtml+xml"/>
+    <property name="platform.contenttypes.sst" value="application/vnd.ms-pkicertstore"/>
+    <property name="platform.contenttypes.doc" value="application/msword"/>
+    <property name="platform.contenttypes.xlw" value="application/vnd.ms-excel"/>
+    <property name="platform.contenttypes.qt" value="video/quicktime"/>
+    <property name="platform.contenttypes.xlt" value="application/vnd.ms-excel"/>
+    <property name="platform.contenttypes.rmi" value="audio/mid"/>
+    <property name="platform.contenttypes.xls" value="application/vnd.ms-excel"/>
+    <property name="platform.contenttypes.xlm" value="application/vnd.ms-excel"/>
+    <property name="platform.contenttypes.xll" value="application/vnd.ms-excel"/>
+    <property name="platform.contenttypes.jar" value="application/java-archive"/>
+    <property name="platform.contenttypes.xlc" value="application/vnd.ms-excel"/>
+    <property name="platform.contenttypes.xla" value="application/vnd.ms-excel"/>
+    <property name="platform.contenttypes.wri" value="application/x-mswrite"/>
+    <property name="platform.contenttypes.txt" value="text/plain"/>
+    <property name="platform.contenttypes.ps" value="application/postscript"/>
+    <property name="platform.contenttypes.bat" value="text/plain"/>
+    <property name="platform.contenttypes.pl" value="application/x-perl"/>
+    <property name="platform.contenttypes.css" value="text/css"/>
+    <property name="platform.contenttypes.bmp" value="image/x-ms-bmp"/>
+    <property name="platform.contenttypes.texi" value="application/x-texinfo"/>
+    <property name="platform.contenttypes.hlp" value="application/winhlp"/>
+    <property name="platform.contenttypes.sql" value="text/plain"/>
+    <property name="platform.contenttypes.cc" value="text/plain"/>
+    <property name="platform.contenttypes.java" value="text/plain"/>
+    <property name="platform.contenttypes.wps" value="application/vnd.ms-works"/>
+    <property name="platform.contenttypes.wdb" value="application/vnd.ms-works"/>
+    <property name="platform.contenttypes.cfg" value="text/plain"/>
+    <property name="platform.contenttypes.zip" value="application/zip"/>
+    <property name="platform.contenttypes.wcm" value="application/vnd.ms-works"/>
+    <property name="platform.contenttypes.wsdl" value="application/xml"/>
+    <property name="platform.contenttypes.mpx" value="application/vnd.ms-project"/>
+    <property name="platform.contenttypes.mpw" value="application/vnd.ms-project"/>
+    <property name="platform.contenttypes.mpt" value="application/vnd.ms-project"/>
+    <property name="platform.contenttypes.properties" value="text/plain"/>
+    <property name="platform.contenttypes.au" value="audio/basic"/>
+    <property name="platform.contenttypes.composite" value="application/xml"/>
+    <property name="platform.contenttypes.componentType" value="application/xml"/>
+    <property name="platform.contenttypes.bpel" value="application/xml"/>
+    <property name="platform.contenttypes.wspolicy" value="application/wspolicy+xml"/>
+    <property name="platform.contenttypes.sch" value="text/xml"/>
+    <property name="platform.contenttypes.json" value="application/json"/>
+
+    <!--
+    # office 2007 content types
+    -->
+
+    <property name="platform.contenttypes.docm" value="application/vnd.ms-word.document.macroEnabled.12"/>
+    <property name="platform.contenttypes.docx" value="application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
+
+    <property name="platform.contenttypes.dotm" value="application/vnd.ms-word.template.macroEnabled.12"/>
+    <property name="platform.contenttypes.dotx" value="application/vnd.openxmlformats-officedocument.wordprocessingml.template"/>
+
+    <property name="platform.contenttypes.potm" value="application/vnd.ms-powerpoint.template.macroEnabled.12"/>
+    <property name="platform.contenttypes.potx" value="application/vnd.openxmlformats-officedocument.presentationml.template"/>
+
+    <property name="platform.contenttypes.ppam" value="application/vnd.ms-powerpoint.addin.macroEnabled.12"/>
+    <property name="platform.contenttypes.ppsm" value="application/vnd.ms-powerpoint.slideshow.macroEnabled.12"/>
+
+    <property name="platform.contenttypes.ppsx" value="application/vnd.openxmlformats-officedocument.presentationml.slideshow"/>
+    <property name="platform.contenttypes.pptm" value="application/vnd.ms-powerpoint.presentation.macroEnabled.12"/>
+
+    <property name="platform.contenttypes.pptx" value="application/vnd.openxmlformats-officedocument.presentationml.presentation"/>
+    <property name="platform.contenttypes.xlam" value="application/vnd.ms-excel.addin.macroEnabled.12"/>
+
+    <property name="platform.contenttypes.xlsb" value="application/vnd.ms-excel.sheet.binary.macroEnabled.12"/>
+    <property name="platform.contenttypes.xlsm" value="application/vnd.ms-excel.sheet.macroEnabled.12"/>
+
+    <property name="platform.contenttypes.xlsx" value="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"/>
+    <property name="platform.contenttypes.xltm" value="application/vnd.ms-excel.template.macroEnabled.12"/>
+    <property name="platform.contenttypes.xltx" value="application/vnd.openxmlformats-officedocument.spreadsheetml.template"/>
+
+
+
+
+
+    <!-- versioning configuration -->
+    <property name="platform.versioning.schema.initial" value="1.0"/>
+    <property name="platform.versioning.schema.profile.wsdlArtifact" value="xml/versionInNamespaceAndFilenameSchema.xml"/>
+    <property name="platform.versioning.schema.profile.xmlSchemaArtifact" value="xml/versionInNamespaceAndFilenameSchema.xml"/>
+
+    <!-- publishing configuration-->
+    <property name="platform.publishing.http.connection.manager.timeout" value="3000"/>
+    <property name="platform.publishing.http.socket.timeout" value="3000"/>
+    <property name="platform.publishing.memory.limit.single" value="65536"/>
+    <property name="platform.publishing.memory.limit.all" value="2097152"/>
+    <property name="platform.publishing.location.normalization" value="cut"/>
+    <property name="platform.publishing.defaultPublishLocation.bacServerArtifact" value="/bacDiscovery"/>
+    <property name="platform.publishing.defaultPublishLocation.uddiRegistryArtifact" value="/uddiImport"/>
+    <property name="platform.publishing.duplicates.limit" value="5"/>
+    <property name="platform.publishing.transaction.timeout" value="-1"/>
+    <!-- list of file extensions that will be handled as archives-->
+    <property name="platform.publishing.ui.zipArchiveExtensions" value="zip\,jar\,ear\,war\,bpr"/>
+    <!-- list of collections to enforce during publishing-->
+    <property name="platform.publishing.ui.enforcedCollections" value="documentation"/>
+    <!--  default synchronization policy for remote publishing -->
+    <property name="platform.publishing.ui.synchronizationPolicy" value="AUTO"/>
+    <!--  default behavior of remote publishing, whether to keep local changes or overwrite them by remote changes -->
+    <property name="platform.publishing.ui.keepLocalChanges" value="true"/>
+    <!--  default behavior of publishing, whether to process contents of files detected as archives or publish them as a single file -->
+    <property name="platform.publishing.ui.processArchiveContent" value="true"/>    
+    <!-- default decomposition setting on Upload Data Content. 0 - None (Only WSDL), 1 - Implementations (WSDL and related, SOAP S.+Enpoint+Opreations), 2 - As 1 + Business S.-->
+    <property name="platform.publishing.ui.defaultDecomposition" value="2"/>
+    <!-- default service type used if decomposition to services is used -->
+    <property name="platform.publishing.ui.defaultServiceType" value="businessService"/>
+    <!-- default decomposition setting on Upload Data Content. 0 - None (Only BPEL), 1 - Business Processes (BPEL + Business Process)-->
+    <property name="platform.publishing.ui.defaultBpelDecomposition" value="1"/>
+    <!-- default unsynchronize setting on Upload Data Content. Comma-separated list, possible values (case sensitive!) are: IMPLEMENTATIONS, ENDPOINTS, OPERATIONS -->
+    <property name="platform.publishing.ui.defaultUnsynchronize" value="IMPLEMENTATIONS\,OPERATIONS"/>
+    <!-- publishing limits-->
+    <property name="platform.publishing.limit.concurrent.uploads.user" value="3"/>
+    <property name="platform.publishing.limit.concurrent.uploads.total" value="6"/>
+    <property name="platform.publishing.limit.max.archive.files" value="10000"/>
+    <property name="platform.publishing.limit.max.archive.bytes" value="10000000"/>
+
+    <!--
+    #
+    # Policy Manager configuration
+    #
+    #
+    -->
+    <property name="policymgr.client.validation.mode" value="auto"/>
+
+    <property name="policymgr.jms.message.batch.size" value="50"/>
+    <property name="policymgr.jms.message.ttl" value="86400"/>
+    <property name="policymgr.queue.default" value="jms/ValidationQueue"/>
+    <property name="policymgr.queues.count" value="1"/>
+    <property name="policymgr.queue.name-0" value="jms/PriorityValidationQueue"/>
+    <property name="policymgr.queue.min-priority-0" value="5"/>
+
+    <!-- retain-->
+    <property name="policymgr.max.exception.stack.trace.length" value="20000"/>
+    <property name="policymgr.rss.reports.authenticate" value="false"/>
+    <property name="policymgr.send.exception.stack.trace" value="true"/>
+    <property name="policymgr.severities.count" value="4"/>
+    <property name="policymgr.severity.coefficient-0" value="0"/>
+    <property name="policymgr.severity.coefficient-1" value="0.5"/>
+    <property name="policymgr.severity.coefficient-2" value="1"/>
+    <property name="policymgr.severity.coefficient-3" value="2"/>
+    <property name="policymgr.severity.default" value="2"/>
+    <property name="policymgr.severity.label-0" value="Optional"/>
+    <property name="policymgr.severity.label-1" value="Minor"/>
+    <property name="policymgr.severity.label-2" value="Normal"/>
+    <property name="policymgr.severity.label-3" value="Major"/>
+    <property name="policymgr.severity.optional" value="0"/>
+    <property name="policymgr.soa.model.sync.check.period" value="600000"/>
+    <property name="policymgr.ui.compliance.status.bad" value="50"/>
+    <property name="policymgr.ui.recent.documents.maxcount" value="10"/>
+    <property name="policymgr.validation.reuse.reports" value="true"/>
+    <property name="policymgr.validation.wait.iteration.coef" value="1.0"/>
+    <property name="policymgr.validation.wait.time" value="400"/>
+    <property name="policymgr.validation.wait.timeout" value="30000"/>
+    <property name="policymgr.validation.reports.ttl" value="30"/>
+
+    <!-- Applicability -->
+    <property name="policymgr.validation.applicableSourceQName.artifactBase" value="{http://systinet.com/2005/05/soa/resource}resource"/>
+    <property name="policymgr.validation.applicableSourceQName.xmlSchemaArtifact" value="{http://www.w3.org/2001/XMLSchema}schema"/>
+    <property name="policymgr.validation.applicableSourceQName.xsltArtifact" value="{http://www.w3.org/2001/XMLSchema}schema"/>
+    <property name="policymgr.validation.applicableSourceQName.wsPolicyArtifact" value="{http://www.w3.org/2001/XMLSchema}schema"/>
+    <property name="policymgr.validation.applicableSourceQName.hpsoaScaArtifact" value="{http://www.w3.org/2001/XMLSchema}schema"/>
+    <property name="policymgr.validation.applicableSourceQName.hpsoaXpdlProcessArtifact" value="{http://www.w3.org/2001/XMLSchema}schema"/>
+    <property name="policymgr.validation.applicableSourceQName.hpsoaBpelProcessArtifact" value="{http://www.w3.org/2001/XMLSchema}schema"/>
+    <property name="policymgr.validation.applicableSourceQName.wsdlArtifact" value="{http://www.w3.org/2001/XMLSchema}schema\,{http://schemas.xmlsoap.org/wsdl/}definitions"/>
+
+    <!--
+    #
+    # Service quality section's colors definition
+    #
+    -->
+    <property name="platform.discovery.colors.defectreport.1-Low" value="#336633"/>
+    <property name="platform.discovery.colors.defectreport.2-Medium" value="#B5BF00"/>
+    <property name="platform.discovery.colors.defectreport.3-High" value="#DE9007"/>
+    <property name="platform.discovery.colors.defectreport.4-Very High" value="#D54837"/>
+    <property name="platform.discovery.colors.defectreport.5-Urgent" value="#CC0066"/>
+
+    <property name="platform.discovery.colors.coveragereport.Not Covered" value="#0F4780"/>
+    <property name="platform.discovery.colors.coveragereport.No Run" value="#21779B"/>
+    <property name="platform.discovery.colors.coveragereport.N/A" value="#838383"/>
+    <property name="platform.discovery.colors.coveragereport.Passed" value="#45AB26"/>
+    <property name="platform.discovery.colors.coveragereport.Failed" value="#BF1F26"/>
+    <property name="platform.discovery.colors.coveragereport.Not Completed" value="#16ABA3"/>
+    <property name="platform.discovery.colors.custom.label1" value="#189208"/>
+    <property name="platform.discovery.colors.custom.label2" value="#FABC00"/>
+
+    <property name="platform.discovery.colors.label" value="#FFFFFF"/>
+
+    <!-- List of defect status values which count in defect histogram-->
+    <property name="platform.discovery.defectstatuses.displayed" value="New\,Open\,Reopen"/>
+
+    <!--
+    # Use WSDL's Repository URL on exports to UDDI (not the originUrl).
+    # Set to false if Repository is not your primary storage for WSDLs.
+    -->
+    <property name="platform.integration.uddi.useRepositoryUrlOnWsdlExport" value="true"/>
+
+    <!--
+    #
+    # BAC integration (health reports)
+    #
+    -->
+    <property name="platform.integration.bac.defaultDataRange" value="pastWeek"/>
+    <property name="platform.integration.bac.defaultDataType" value="synthetic_data"/>
+
+    <!--
+    # Execution Report timestamp validity interval; timestamp should be updated
+    # at least so often (in seconds) to prevent the execution look staled
+    -->
+    <property name="shared.execution.timestamp.validity" value="180"/>
+    <!--
+    # When considering timestamp validity, potentially unsynchronized clock
+    # in the cluster has to be taken into account (in seconds)
+    -->
+    <property name="shared.execution.timestamp.skew" value="180"/>
+
+    <!--
+    # Time of last update of tables for usage-statistics
+    # This time is used for processing of audit events which are stored in audit_events table
+    -->
+    <property name="platform.usage.stats.last.update" value="0"/>
+
+    <!--
+    # List of artifact types which are excluded from Activity Report (usage stats) computation
+    # List consists of  SDM names separated by comma
+    -->
+    <property name="platform.usage.stats.excluded.artifact.types" value="reportArtifact\,taskArtifact"/>
+
+    <!--
+    # Configuration property denoting whether audit incoming HTTP requests
+    -->
+    <property name="platform.audit.endpoint.events" value="false"/>
+
+    <!--
+    # List of http request parameters which form key of cached responses.
+    # List consists of parameter names separated by comma
+    -->
+    <property name="platform.usage.stats.cached.params" value="queryType\,interval\,operation\,maxSize"/>
+
+    <!--
+    # Configuration properties of http client proxy
+    -->
+
+    <property name="shared.http.client.proxy.enabled" value="false"/>
+    <property name="shared.http.client.proxy.host" value="proxyhost"/>
+    <property name="shared.http.client.proxy.port" value="8080"/>
+    <property name="shared.http.client.proxy.user"/>
+    <property name="shared.http.client.proxy.password"/>
+    <!--
+    # list of hosts (separated by comma) where http proxy is not used
+    -->
+    <property name="shared.http.client.proxy.nonproxyhosts" value="localhost\,127.0.0.1"/>
+
+    # max lenght of data storing to database, if data is bigger it will be stored to filesystem
+    # value is number of bytes (0-4294967296)
+    <property name="platform.datafile.length" value="100000000"/>
+    # directory where is data stored, default value is java temporary directory
+    <property name="platform.datafile.directory"/>
+
+
+    <!--
+    #
+    # Properties for Graphical Navigator
+    #
+    -->
+    <property name="platform.navigator.impl.graph.fallback_edge" value="1000"/>
+    <property name="platform.navigator.impl.graph.expand_hard_limit" value="300"/>
+    <property name="platform.navigator.impl.graph.expand_limit" value="20"/>
+    
+    <property name="platform.navigator.impl.graph.impact_limit" value="55"/>
+    <property name="platform.navigator.impl.graph.minimum_limit" value="15"/>
+
+    <property name="platform.navigator.perspectives.system.all_artifacts" ref="data/navigator.perspectives.allArtifacts.xml" type="bin"/>
+    <property name="platform.navigator.perspectives.system.composition_view" ref="data/navigator.perspectives.compositionView.xml" type="bin"/>
+    <property name="platform.navigator.perspectives.system.hide_businessLayer" ref="data/navigator.perspectives.hideBusinessLayer.xml" type="bin"/>
+    <property name="platform.navigator.perspectives.system.hide_applicationBusinessLayer" ref="data/navigator.perspectives.hideApplicationBusinessLayer.xml" type="bin"/>
+    <property name="platform.navigator.perspectives.system.hide_technologyLayer" ref="data/navigator.perspectives.hideTechnologyLayer.xml" type="bin"/>
+    <property name="platform.navigator.perspectives.system.architecturalLayerFilter" ref="data/navigator.perspectives.architecturalLayerFilter.xml" type="bin"/>
+
+    <property name="platform.navigator.layout.layered.system.architecturalTiers" ref="data/navigator.layout.layered.architecturalTiers.xml" type="bin"/>
+    <property name="platform.navigator.layout.layered.system.planningView" ref="data/navigator.layout.layered.planningView.xml" type="bin"/>
+
+    <!-- The maximum length of an artifact desciption in chars -->
+    <property name="platform.repository.max.description.length" value="25000"/>
+    
+    <!-- Enable or disable checking of ACL tail in SQL queries.  -->
+    <property name="platform.rdbms.runtime.querychecker" value="false"/>
+    
+    <!-- The maximum amount of history -->
+    <property name="platform.navigator.history.max" value="10"/>
+
+    <!--
+    #
+    # Properties for Default UI Assignment Adapter
+    #
+    -->
+
+    <!-- if user is not domain user in any domain, following domain will be considered as user's default -->
+    <property name="platform.catalog.defaultUiAdapter.defaultDomain" value="defaultDomain"/>
+
+    <!-- platform.catalog.defaultUiAdapter.assignRole and .assignGroup properties are mutually exclusive,
+     assignRole has higher priority -->
+
+    <!-- if user has no role connected to some UI tab, he will be assigned to following role -->
+    <property name="platform.catalog.defaultUiAdapter.assignRole" value="CatalogUser"/>
+
+    <!-- if user has no role connected to some UI tab, he will be added to following group -->
+    <!--property name="platform.catalog.defaultUiAdapter.assignGroup" value="hp#providers"/-->
+
+    <!-- Recent documents max number for user -->
+    <property name="platform.ui.recentDocuments.maxcount" value="10"/>
+	
+	<!-- The maximum artifact of relationship display on overview tab   -->
+    <property name="platform.ui.relationship.artifact.max" value="4"/>
+
+    <!-- Timeout for automatic artifact validation (form validation) caches -->
+    <!-- Timeout for artifact type -> technical policy uuid cache -->
+    <property name="platform.autovalidation.cache.artifact_tp.timeout" value="1800"/>
+    <!-- Timeout for technical policy uuids -> policy assertions cache -->
+    <property name="platform.autovalidation.cache.tp_assertions.timeout" value="1800"/>
+    <!-- When true then also artifact data content will be validated -->
+    <property name="platform.autovalidation.validateData" value="false"/>
+
+    <!-- platform.notify.approvers -->
+    <property name="platform.lifecycle.notify" value="true"/>
+    <property name="platform.lifecycle.notify.approvers" value="true"/>
+    <property name="platform.lifecycle.requestApproval.automatic" value="true"/>
+
+    <!-- Time in days how long reports should be kept -->
+    <property name="platform.reports.ttl" value="30"/>
+
+    <!-- Time in days how long lifecycle user events should be kept -->
+    <property name="platform.userevents.lifecycle.ttl" value="30"/>
+    <!-- Time in days how long artifact user events should be kept -->
+    <property name="platform.userevents.artifact.ttl" value="30"/>
+    <!-- Time in days how long task user events should be kept -->
+    <property name="platform.userevents.task.ttl" value="30"/>
+    <!-- Time in days how long comment user events should be kept -->
+    <property name="platform.userevents.comment.ttl" value="30"/>
+    
+    <!-- Batch ETag update properties -->
+	<property name="platform.listener.etag.waitForExecuteUpdateCollectionETagsInMillis" value="10000"/>
+	<property name="platform.listener.etag.collectionETagsOn" value="true"/>
+	
+	<!-- Configuration for stages colors associated to deliverable -->
+	<property name="platform.architecture.changes.color" value="{completed: '#00882B'\, notCompleted: '#E7C300'\, invalid: '#FF0000'}"/>
+	
+	<!-- Shortcut configuration -->
+	<property name="platform.shortcuts.definition.change.consolidate" value="false"/>
+    <property name="platform.shortcuts.definition.enable.onfly" value="true"/>
+    <property name="platform.shortcuts.definition.enable.calculation" value="true"/>
+    
+    <!-- Dashboard configuration -->
+    <property name="platform.ui.preferences.reports.dashboard.task.dashboard.ArchimateCompliance.readonly" value="true"/>
+    <property name="platform.ui.preferences.reports.dashboard.task.dashboard.Roadmap.readonly" value="true"/>
+    <property name="platform.ui.preferences.reports.dashboard.task.dashboard.Investments.readonly" value="true"/>
+    <property name="platform.ui.preferences.reports.dashboard.task.dashboard.ApplicationCosts.readonly" value="true"/>
+    <property name="platform.ui.preferences.reports.dashboard.task.dashboard.ProjectCosts.readonly" value="true"/>
+    <property name="platform.ui.preferences.reports.dashboard.task.dashboard.ProjectStatusReport.readonly" value="true"/>
+    <property name="platform.ui.preferences.reports.dashboard.task.dashboard.ApplicationStatusReport.readonly" value="true"/>
+    <property name="platform.ui.preferences.reports.dashboard.task.dashboard.ApplicationLayerMetamodel.readonly" value="true"/>
+
+    <property name="reports.dashboard.task.dashboard.ArchimateCompliance.deletable" value="false"/>
+    <property name="reports.dashboard.task.dashboard.Roadmap.deletable" value="false"/>
+    <property name="reports.dashboard.task.dashboard.Investments.deletable" value="false"/>
+    <property name="reports.dashboard.task.dashboard.ApplicationCosts.deletable" value="false"/>
+    <property name="reports.dashboard.task.dashboard.ProjectCosts.deletable" value="false"/>
+    <property name="reports.dashboard.task.dashboard.ProjectStatusReport.deletable" value="false"/>
+    <property name="reports.dashboard.task.dashboard.ApplicationStatusReport.deletable" value="false"/>
+    <property name="reports.dashboard.task.dashboard.ApplicationLayerMetamodel.deletable" value="false"/>
+    <property name="reports.dashboard.task.dashboard.CapabilitiestoComponentsMapping.deletable" value="false"/>
+    <property name="reports.dashboard.task.dashboard.DataObjectsvsApplicationServicesMatrix.deletable" value="false"/>
+    <property name="reports.dashboard.task.dashboard.MostExpensiveApplications.deletable" value="false"/>
+    
+    <!-- Hp sso integration -->
+    <property name="platform.ui.customProperties.prefixName" value="c_"/>
+    
+    <!-- Publish to Csa templates -->
+    <property name="platform.integration.csa.publish.createServiceDesignContainer" value="{'name': '{0}'\, 'description': '{0}'\, 'icon': '/csa/api/blobstore/Service_Design.png?tag=library'\, 'container_type': 'TOPOLOGY_ARTIFACT_CONTAINER'}"/>
+    <property name="platform.integration.csa.publish.createServiceDesign" value="{'name': '{0}'\,'description': '{0}'\,'version': '1.0'\,'type': 'topology'\,'containerId': '{1}'}"/>
+    
+<property name="install.extensions.skip" value="true"/>
+<property name="shared.db.url" value="jdbc:oracle:thin:@@db.host@:1521/@db.dbname@"/>
+<property name="shared.um.group.backend.enableMoreBackends" value="false"/>
+<property name="platform.integration.hpsso.enabled" value="false"/>
+<property name="shared.db.driver.class" value="oracle.jdbc.driver.OracleDriver"/>
+<property name="install.in.progress"/>
+<property name="shared.um.account.backend.enableMoreBackends" value="false"/>
+<property name="install.extensions.skip.platform" value="true"/>
+<property name="import.demo.data" value="true"/>
+<property name="shared.hibernate.dialect" value="com.hp.systinet.persistence.Oracle10gNoTxTtDialect"/>
+<property name="runtime.rdbms_setup.present" value="true"/>
+<property name="install.debug.mode" value="false"/>
+<property name="install.extensions.skip.reporting" value="true"/>
+<property name="install.extensions.skip.policymgr" value="true"/>
+<property name="install.extensions"/>
+<property name="install.updates"/>
+</configuration>
